@@ -19,7 +19,7 @@ module SemanticParser
 	end
 
 	def mock_translate
-		input_nodes 		= $G_INPUT.split 							#.map.with_index { |v,i| {i => v} }
+		input_nodes 		= $G_INPUT.split
 		response_nodes 	= $G_RESPONSE.split.map.with_index { |v,i| {i => {:target => v, :verify => $G_VERIFY[i]}} }
 		input_nodes.each.with_index do |src, index|
 			h = Hash.new { |h,k| h[k] = [] }
