@@ -5,11 +5,19 @@
   margin-bottom: 3%;
 }
 
+#article {
+  text-align: justify;
+  margin: auto;
+  width: 40%;
+}
+
 .break {
+  height: 20px;
   clear: both;
 }
 
 .class1, .class2, .class3, .class4 {
+  font-size: large;
   float: left;
   margin-right: 5px;
 }
