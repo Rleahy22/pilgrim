@@ -4,7 +4,8 @@ module SemanticParser
 
 	API_BASE = "https://www.googleapis.com/language/translate/v2?key=" + ENV['GAPI']
 
-	def translate paragraph_in, source, target
+	def translate paragraph_in, source, target, mock
+		return mock_translate if mock
 		scentences_in 	= paragraph_in.split('.').map { |scen| URI.escape(scen) }
 		scentences_back = scentences_in.map { |scen| api_call scen, source, target }
 	end
@@ -16,15 +17,15 @@ module SemanticParser
 		api_return['data']['translations'][0]['translatedText']
 	end
 
-
-
-
+	def mock_translate
+		puts "mock mock mock"
+	end
 end
 
 if $0 == __FILE__
 	include SemanticParser
 
-	puts translate "I wish I could fly", "en", "fr"
+	puts translate "I wish I could fly", "en", "fr", true
 
 	sampleInput 		= URI.escape("Ultra High Definition TV technology offers resolution measuring 3840 x 2160 pixels, or 8 megapixels -- four times that of 1080p televisions, which offer 2 megapixels of resolution.Besides far higher resolution, one advantage pointed out by industry pundits is that 4K TV can show passive 3D better than today's 1080p sets.")
 	sampleResponse 	= URI.escape("La technologie de TV haute définition Ultra offre mesurant 3840 x 2160 pixels, soit 8 mégapixels résolution - quatre fois celle des téléviseurs 1080p, offrant 2 mégapixels de résolution.D'ailleurs beaucoup plus haute résolution, un avantage souligné par les experts de l'industrie est que TV 4K 3D passive peut montrer mieux que jeux 1080p d'aujourd'hui.")
