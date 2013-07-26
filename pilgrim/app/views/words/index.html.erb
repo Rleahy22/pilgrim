@@ -1,13 +1,15 @@
+<div id="slider"></div>
+
 <% @words.each do |word| %>
   <% case word.id % 4 %>
-  <% when 0 %>
-    <% int = 'class1' %>
+    <% when 0 %>
+      <% int = 'class4' %>
     <% when 1 %>
-    <% int = 'class2' %>
+      <% int = 'class1' %>
     <% when 2 %>
-    <% int = 'class3' %>
+      <% int = 'class2' %>
     <% when 3 %>
-    <% int = 'class4' %>
+      <% int = 'class3' %>
   <% end %>
   <div class="<%= int %>"><%= word.entry %></div>
 <% end %>
