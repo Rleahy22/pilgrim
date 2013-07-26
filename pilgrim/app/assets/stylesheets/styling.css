@@ -1,0 +1,19 @@
+#slider {
+  width: 20%;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+.break {
+  clear: both;
+}
+
+.class1, .class2, .class3, .class4 {
+  float: left;
+  margin-right: 5px;
+}
+
+.ui-slider-handle {
+  width: 2em;
+}
