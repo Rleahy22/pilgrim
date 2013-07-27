@@ -7,6 +7,6 @@ class ParsersController < ApplicationController
 
 		parser = SemanticParser.new(nil, nil, nil, {:source => source.split, :target => target.split, :verify => verify})
 	  parsed = parser.parse
-	  render :json => parsed
+	  render :json => {words: parsed.values}
   end
 end

@@ -32,10 +32,11 @@ class SemanticParser
   end
 
   def levels tar_i, src = nil
-    return { 1 => tar_i } unless src
+    return { "level" => 999, "src" => tar_i } unless src
     {
-      1 => src,
-      @order[tar_i] => @translation[:target][tar_i]
+      "level" => @order[tar_i],
+      "src" => src,
+      "tar" => @translation[:target][tar_i]
     }
   end
 
