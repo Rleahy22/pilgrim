@@ -1,19 +1,21 @@
 <div id="slider"></div>
 
-<% @words.each do |word| %>
-  <% if word.entry == '-p' %>
-    <% int = 'break' %>
-  <% else %>
-    <% case word.id % 4 %>
-      <% when 0 %>
-        <% int = 'class4' %>
-      <% when 1 %>
-        <% int = 'class1' %>
-      <% when 2 %>
-        <% int = 'class2' %>
-      <% when 3 %>
-        <% int = 'class3' %>
+<div id="article">
+  <% @words.each do |word| %>
+    <% if word.entry == '-p' %>
+      <% int = 'break' %>
+    <% else %>
+      <% case word.id % 4 %>
+        <% when 0 %>
+          <% int = 'class4' %>
+        <% when 1 %>
+          <% int = 'class1' %>
+        <% when 2 %>
+          <% int = 'class2' %>
+        <% when 3 %>
+          <% int = 'class3' %>
+      <% end %>
     <% end %>
+    <div class="<%= int %>"><%= word.entry %></div>
   <% end %>
-  <div class="<%= int %>"><%= word.entry %></div>
-<% end %>
+</div>
