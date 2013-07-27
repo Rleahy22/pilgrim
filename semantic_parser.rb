@@ -4,24 +4,15 @@ require 'json'
 API_BASE = "https://www.googleapis.com/language/translate/v2?key=" + ENV['GAPI']
 
 class SemanticParser
-  attr_reader :nodes
-	def initialize paragraph_in, src, tar, translation
+  attr_reader :translation, :nodes, :corr
+	def initialize paragraph_in, src, tar, translation = nil
 		@paragraph_in = paragraph_in
 		@translation  = translation ||= Translator.fetch(paragraph_in, src, tar)
 		@nodes        = node_translation
   end
 
   def parse
-    p correlate_nodes 
-	end
-
-	def correlate_nodes
-    @corr = Hash.new { [] }
-		@nodes[:verify].each do |index, verify|
-      @nodes[:source].each do |i, src|
-        corr[i] << index if src == verify
-      end
-		end
+    correlate_nodes
 	end
 
 	def clean correlated
@@ -29,16 +20,26 @@ class SemanticParser
 		correlated.map!(&closest_match)
 	end
 
-	# def closest_match_in
-	# 	proc = do |rel| 
-	# 		rel unless rel.values[0].length > 1
-	# 		rel.values[0].min { |a,b| (rel.keys[0] - a).abs <=> (rel.keys[0] - b).abs } 
-	# 	end
-	# end
+	def closest_match_in
+		Proc.new do |rel| 
+			rel unless rel.values[0].length > 1
+			rel.values[0].min { |a,b| (rel.keys[0] - a).abs <=> (rel.keys[0] - b).abs } 
+		end
+	end
 
+	private
+
+	def correlate_nodes
+    @corr = Hash.new { |h,k| h[k] = []}
+		@nodes[:verify].each do |index, verify|
+      @nodes[:source].each do |i, src|
+        @corr[i] << index if src.downcase == verify.downcase
+      end
+		end
+	end
+	
   def node_translation
     nodes = {:source => {}, :target => {}, :verify => {}}
-    @translation.each { |h,k| h[k] = k.split if k.is_a? String }
     @translation.keys.each do |key|
        @translation[key].each.with_index do |val, i|
          nodes[key][i] = val
@@ -66,7 +67,7 @@ if $0 == __FILE__
 	G_VERIFY			= ["the", "technology", "of", "TV", "high", "definition", "ultra", "offers", "measuring", "3840", "x", "2160", "pixels", "or", "8", "megapixel", "resolution", "-", "four", "times", "that", "of", "TVs", "1080p", "offering", "2", "megapixel", "of", "resolution", "Indeed", "a lot", "more", "high", "resolution", "a", "advantage", "out", "by", "the", "experts", "of", "industry", "is", "that", "TV", "4K", "3D", "passive", "can", "show", "more", "that", "games", "1080p", "today"]
 
 	parser = SemanticParser.new(nil, nil, nil, {:source => G_INPUT.split, :target => G_RESPONSE.split, :verify => G_VERIFY})
-	parser.nodes.keys.each { |k| p parser.nodes[k] }
-  #parser.parse
+	#parser.nodes.keys.each { |k| p parser.nodes[k] }
+  parser.parse
 	#puts parser.results
 end
