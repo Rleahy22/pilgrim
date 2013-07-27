@@ -14,24 +14,7 @@
   <div id="slider"></div>
 </div>
 <div id="article">
-<script id="text" type="text/x-handlebars-template">
-    {{#each words}}{{src}} {{/each}}
-</script>
-  <!-- <#% @words.each do |word| %> -->
-    <!-- <#% if word.entry == '-p' %> -->
-      <!-- <#% int = 'break' %> -->
-    <!-- <#% else %> -->
-      <!-- <#% case word.id % 4 %> -->
-        <!-- <#% when 0 %> -->
-          <!-- <#% int = 'class4' %> -->
-        <!-- <#% when 1 %> -->
-          <!-- <#% int = 'class1' %> -->
-        <!-- <#% when 2 %> -->
-          <!-- <#% int = 'class2' %> -->
-        <!-- <#% when 3 %> -->
-          <!-- <#% int = 'class3' %> -->
-      <!-- <#% end %> -->
-    <!-- <#% end %> -->
-    <!-- <div class="<#%= int %>"><#%= word.entry %></div> -->
-  <!-- <#% end %> -->
+  <script id="text" type="text/x-handlebars-template">
+      {{#each words}}{{src}} {{/each}}
+  </script>
 </div>
