@@ -43991,3 +43991,1085 @@ Served asset /word.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-27 14:26:47 -0500
 Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateWords (20130725195225)
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "words" ("id" serial primary key, "entry" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130725195225')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (7.6ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "While"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "world"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "has"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "become"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "fixated"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "on"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "NSA's"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "domestic"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "foreign"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "surveillance"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "activities"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "in"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "past"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "months,"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "trial"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "Private"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "First"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "Class"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "Bradley"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "Manning"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "is"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "coming"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "close."], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "Concluding"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "arguments"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "were"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "heard"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "today."], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "The"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "government,"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "as"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "BoingBoing"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "notes,"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "is"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "trying"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "convict"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "Manning"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "using"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "Espionage"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "Act,"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00], ["entry", "slap"], ["updated_at", Sat, 27 Jul 2013 21:23:32 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "him"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "with"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "charge"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "'aiding"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "enemy.'"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Manning"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "has"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "plead"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "guilty"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "\"lesser\""], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "charges."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "-p"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "We"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "in"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "technology"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "must"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "pay"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "attention"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "those"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "willing"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "leak"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "from"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "government,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "given"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "that"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "such"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "information"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "has"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "played"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "key"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "role"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "in"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "shaping"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "public"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "opinion"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "regarding"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "piracy"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "privacy"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "among"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "other"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "issues."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "The"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Snowden"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "effect"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "is"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "material,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "critical."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "-p"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Firedoglake"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "has"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "done"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "masterful"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "job"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "not"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "only"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "reporting"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "on"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "case,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "but"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "also"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "live-blogging"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "as"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "much"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "as"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "possible."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "-p"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "The"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "government"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "alleges"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "that"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Manning"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "leaked"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "not"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "out"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "desire"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "spread"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "knowledge"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "government"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "military"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "misdeed,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "but"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "instead"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "out"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "lust"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "for"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "fame."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "His"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "pride,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "it"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "was"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "asserted,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "was"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "proven"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "because"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "government"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "produced"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "picture"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "smiling"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Manning."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Hard"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "evidence,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "certainly."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "-p"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "At"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "same"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "time,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "as"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Nathan"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Fuller"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "pointed"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "out,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "\"Govt"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "repeating"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "over"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "&"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "over"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Manning"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "was"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "obsessed"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "about"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "his"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "own"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "fame,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "craved"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "notoriety."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "At"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "same"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "time"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "arguing"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "further"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "he"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "kept"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "identity"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "hidden.\""], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "If"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "you"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "can"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "untangle"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "logic"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "behind"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "that"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "argument,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "you"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "are"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "better"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "person"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "than"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "I."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "-p"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Regarding"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Collateral"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Murder"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "video"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "that"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "showed"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "needless"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "civilian"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "deaths,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "government,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "according"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Firedoglake"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "merely"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "stated"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "that"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "clip"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "contained"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "\"action\""], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "experiences"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "service"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "members"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "conducting"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "wartime"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "mission.\""], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "The"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "government"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "put"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "price"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "on"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "\"worth\""], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Afghanistan"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Iraq"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Logs"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "that"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Wikileaks"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "released"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "public"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "at"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "$1.3"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "million"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "$1.9"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "million,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "respectively."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "-p"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "The"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "idea"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "of"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "prosecuting"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Manning"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "for"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "\"aiding"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "enemy\""], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "is"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "worrisome,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "as"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "it"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "is"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "an"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "around-the-side"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "charge:"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "Manning"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "provided"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "information"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "enemy"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "because"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "he"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "gave"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "it"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "journalistic"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "organization"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "that"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "published"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "it,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "allowing"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "\"enemy\""], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "to"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "read"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "it;"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "this"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "would"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "make"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "all"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "leakers"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "and"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "whistle"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "blowers"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "potentially"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "legally"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "damnable"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "on"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "the"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "same"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "charge."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "If"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "we"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "set"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "that"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "precedent,"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "investigative"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "journalism"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "will"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "take"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "a"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "body"], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "words" ("created_at", "entry", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["created_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00], ["entry", "blow."], ["updated_at", Sat, 27 Jul 2013 21:23:33 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Connecting to database specified by database.yml
