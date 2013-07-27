@@ -9,28 +9,40 @@ class SemanticParser
 		@paragraph_in = paragraph_in
 		@translation  = translation ||= Translator.fetch(paragraph_in, src, tar)
 		@nodes        = node_translation
+    @corr = Hash.new { |h,k| h[k] = []}
   end
 
   def parse
     correlate_nodes
+    singlize
+    generate
+    @translation[:json]
 	end
 
-	def clean correlated
-		correlated.compact!
-		correlated.map!(&closest_match)
-	end
-
-	def closest_match_in
-		Proc.new do |rel| 
-			rel unless rel.values[0].length > 1
-			rel.values[0].min { |a,b| (rel.keys[0] - a).abs <=> (rel.keys[0] - b).abs } 
-		end
-	end
+  def generate
+    randomize
+    @translation[:json] = {} 
+    @translation[:source].each.with_index do |src, index|
+      @translation[:json][index] = @corr.key?(index) ? levels(@corr[index], src) : levels(src)
+    end
+  end
 
 	private
 
+  def randomize
+    @order = {}
+    @corr.values.shuffle.each.with_index { |tar_i, index| @order[tar_i] = (index % 4)+1 }
+  end
+
+  def levels tar_i, src = nil
+    return { 1 => tar_i } unless src
+    {
+      1 => src,
+      @order[tar_i] => @translation[:target][tar_i]
+    }
+  end
+
 	def correlate_nodes
-    @corr = Hash.new { |h,k| h[k] = []}
 		@nodes[:verify].each do |index, verify|
       @nodes[:source].each do |i, src|
         @corr[i] << index if src.downcase == verify.downcase
@@ -38,6 +50,12 @@ class SemanticParser
 		end
 	end
 	
+	def singlize
+	  @corr.each do |k,h| 
+	  	@corr[k] = h.min { |a,b| (k - a).abs <=> (k - b).abs } 
+	  end
+	end
+
   def node_translation
     nodes = {:source => {}, :target => {}, :verify => {}}
     @translation.keys.each do |key|

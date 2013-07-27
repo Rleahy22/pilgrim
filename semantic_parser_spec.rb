@@ -5,9 +5,9 @@ describe SemanticParser do
   let(:lazy) { "the quick brown fox jumps over the lazy dog" }
   let(:paresseux) do 
     SemanticParser.new(nil, nil, nil, {
-      :source => ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"], 
-      :target => ["Le", "rapide", "renard", "brun", "saute", "sur", "le", "chien", "paresseux"], 
-      :verify => ['the', 'Quick', 'fox', 'brown', 'jumps', 'about', 'the', 'dog', 'lazy']
+      :source => ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog", "quick"], 
+      :target => ["Le", "rapide", "renard", "brun", "saute", "sur", "le", "chien", "paresseux", "rapide"], 
+      :verify => ['the', 'Quick', 'fox', 'brown', 'jumps', 'about', 'the', 'dog', 'lazy', 'quick']
     })
   end
 
@@ -30,17 +30,25 @@ describe SemanticParser do
   end
   
   describe "#parse" do
-    it "calls #correlate_nodes" do
-      paresseux.stub(:correlate_nodes)
-      paresseux.should_receive(:correlate_nodes)
+    it "removes all duplicates" do
       paresseux.parse
+      expect(paresseux.corr.values.map(&:class).uniq).to eq [Fixnum]
+    end
+
+    it "returns a hash" do
+      expect(paresseux.parse.class).to eq Hash 
+    end
+
+    it "provides a lvl 1 for all elements" do
+      paresseux.parse
+      expect(paresseux.translation[:json].values.map(&:keys).flatten.select {|v| v == 1}.count).to eq paresseux.translation[:json].count
     end
   end
 
   describe "@corr" do
     it "filters the results down to their reverse translation" do
       paresseux.parse
-      expect(paresseux.corr.keys.count).to eq 8
+      expect(paresseux.corr.keys.count).to eq 9
     end
   end
 
