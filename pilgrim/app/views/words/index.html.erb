@@ -1,5 +1,18 @@
-<div id="slider"></div>
-
+<div id="options">
+  <select name="Language" id="language">
+    <option value="English">English</option>
+    <option value="Spanish">Spanish</option>
+    <option value="French">French</option>
+    <option value="German">German</option>
+    <option value="Italian">Italian</option>
+    <option value="Portuguese">Portuguese</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Madarin">Madarin</option>
+    <option value="Russian">Russian</option>
+    <option value="Greek">Greek</option>
+  </select>
+  <div id="slider"></div>
+</div>
 <div id="article">
   <% @words.each do |word| %>
     <% if word.entry == '-p' %>
