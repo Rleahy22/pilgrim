@@ -1,13 +1,24 @@
+#options {
+  position: fixed;
+  top: 2%;
+  left: 30%;
+  width: 40%;
+}
+
+#language {
+  margin: 2%;
+  display: inline-block;
+}
+
 #slider {
-  width: 20%;
-  margin: auto;
-  margin-top: 1%;
-  margin-bottom: 3%;
+  display: inline-block;
+  width: 50%;
 }
 
 #article {
-  text-align: justify;
-  margin: auto;
+  position: absolute;
+  top: 20%;
+  right: ;
   width: 40%;
 }
 
