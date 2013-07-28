@@ -28,13 +28,13 @@ class SemanticParser
 
   def randomize
     @order = {}
-    @corr.values.shuffle.each.with_index { |tar_i, index| @order[tar_i] = (index % 4)+1 }
+    @corr.values.shuffle.each.with_index { |tar_i, index| @order[tar_i] = (index % 10)+1 }
   end
 
   def levels tar_i, src = nil
-    return { "level" => 999, "src" => tar_i } unless src
+    return { "lvl" => 9001, "src" => tar_i } unless src
     {
-      "level" => @order[tar_i],
+      "lvl" => @order[tar_i],
       "src" => src,
       "tar" => @translation[:target][tar_i]
     }
