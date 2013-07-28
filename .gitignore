@@ -1,8 +1,13 @@
 ######################
 #        ENV         #
 ######################
-.env
 
+### DOT FILES
+.env
+.todo
+
+### TMP FILES
 tmp/*
 
+### LOGS
 log/*
