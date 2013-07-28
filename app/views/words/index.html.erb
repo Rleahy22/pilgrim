@@ -7,7 +7,7 @@
     <option value="Italian">Italian</option>
     <option value="Portuguese">Portuguese</option>
     <option value="Japanese">Japanese</option>
-    <option value="Madarin">Madarin</option>
+    <option value="Mandarin">Mandarin</option>
     <option value="Russian">Russian</option>
     <option value="Greek">Greek</option>
   </select>
@@ -15,6 +15,19 @@
 </div>
 <div id="article">
   <script id="text" type="text/x-handlebars-template">
-      {{#each words}}{{src}} {{/each}}
+
+      {{#each words}}
+        {{#checkProficiency lvl}}
+          {{src}}
+        {{else}}
+          <b>{{tar}}</b>
+        {{/checkProficiency}}
+      {{/each}}
   </script>
+      <!-- // {{level}}, {{src}}, {{tar}}
+      // level in javasctipt is equal to value of slider
+      // if the level in javascript is >= the {{level}} then
+      // ouput tar
+      // else
+      // output -->
 </div>
