@@ -28,7 +28,7 @@ class SemanticParser
 
   def randomize
     @order = {}
-    @corr.values.shuffle.each.with_index { |tar_i, index| @order[tar_i] = (index % 10)+1 }
+    @corr.values.shuffle.each.with_index { |tar_i, index| @order[tar_i] = (index % 30)+1 }
   end
 
   def levels tar_i, src = nil
