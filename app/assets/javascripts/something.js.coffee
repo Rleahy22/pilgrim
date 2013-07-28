@@ -3,7 +3,7 @@ parsed = {}
 proficiency = 1
 
 updateArticle = (value) ->
-	proficiency = value
+	proficiency = value/3
 	$('#article').html(template(parsed))
 
 Handlebars.registerHelper "checkProficiency", (level, options) ->
@@ -21,7 +21,7 @@ $ ->
   $('#slider').slider
     value:1
     min:1
-    max:10
+    max:90
     step:1
     slide: (event, ui) ->
     	updateArticle(ui.value)
