@@ -17,7 +17,12 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem "omniauth-google-oauth2"
+
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  gem "shoulda-matchers"
+  gem 'factory_girl'
 end

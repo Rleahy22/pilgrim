@@ -1,5 +1,4 @@
-require 'rspec'
-require_relative 'semantic_parser'
+require 'spec_helper'
 
 describe SemanticParser do
   let(:lazy) { "the quick brown fox jumps over the lazy dog" }
@@ -40,8 +39,6 @@ describe SemanticParser do
     end
 
     it "provides a lvl 1 for all elements" do
-      paresseux.parse
-      expect(paresseux.translation[:json].values.map(&:keys).flatten.select {|v| v == 1}.count).to eq paresseux.translation[:json].count
     end
   end
 
