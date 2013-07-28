@@ -27,4 +27,9 @@ $ ->
     	updateArticle(ui.value)
 
 	$('#language').on 'change', ->
+    target = $(this).val()
+    $.getJSON 'https://www.googleapis.com/language/translate/v2?key=AIzaSyALN7om8pcP6n5BhSB0v9K23KQB4B1mefo&q=' + 'word' + '&source=en&target=' + target , (data) ->
+      replacement = (data.data["translations"][0]["translatedText"])
+      console.log(replacement)
+      # $(source).html(replacement)
 		$('#article').html(template(parsed))
