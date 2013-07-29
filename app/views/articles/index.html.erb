@@ -1,0 +1,7 @@
+<h2>Here is an article!</h2>
+<h3>Title:</h3>
+<%= @article.title %>
+<br>
+<% @formatted.each do |word| %>
+  <%= raw(word) %>
+<% end %>
