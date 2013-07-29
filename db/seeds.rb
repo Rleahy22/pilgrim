@@ -13,9 +13,11 @@ word_array.each do |word|
   Word.create(entry: word)
 end
 
-articles = Article.get_recent_articles("http://www.lefigaro.fr/rss/figaro_web.xml")
-article = Article.get_content(articles.first)
-Article.create( title: article["title"],
-                url: article["url"],
-                image: article["lead_image_url"],
-                content: article["content"])
+urls = Article.get_recent_article_urls("http://www.lefigaro.fr/rss/figaro_web.xml")
+json_articles = Article.get_json_content(urls)
+json_articles.each do |article|
+  Article.create( title: article["title"],
+                  url: article["url"],
+                  image: article["lead_image_url"],
+                  content: article["content"])
+end
