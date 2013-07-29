@@ -1,7 +1,6 @@
-<h2>Here is an article!</h2>
-<h3>Title:</h3>
-<%= @article.title %>
-<br>
-<% @formatted.each do |word| %>
-  <%= raw(word) %>
-<% end %>
+<h3>Articles:</h3>
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= link_to "#{article.title}", article_path(article) %></li>
+  <% end %>
+</ul>
