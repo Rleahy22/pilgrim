@@ -5,14 +5,18 @@ class Article < ActiveRecord::Base
 
   before_save :parse
 
-  def self.get_recent_articles(rss_url)
+  def self.get_recent_article_urls(rss_url)
     feed = Feedzirra::Feed.fetch_and_parse(rss_url)
     feed.entries.map { |entry| entry.url }
   end
 
-  def self.get_content(article)
-    api_format = "https://www.readability.com/api/content/v1/parser?url=#{article}&token=ee8e522664d780a6cd208df1d21fa424f7fe400d"
-    JSON.parse(open(api_format).read)
+  def self.get_json_content(urls)
+    json_articles = []
+    urls.each do |url|
+      api_format = "https://www.readability.com/api/content/v1/parser?url=#{url}&token=ee8e522664d780a6cd208df1d21fa424f7fe400d"
+      json_articles << JSON.parse(open(api_format).read)
+    end
+    json_articles
   end
 
   private
