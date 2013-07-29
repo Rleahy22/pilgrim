@@ -6,4 +6,6 @@ Pilgrim::Application.routes.draw do
 
   resources :words
   get '/test' => 'parsers#test'
+
+  resources :articles
 end
