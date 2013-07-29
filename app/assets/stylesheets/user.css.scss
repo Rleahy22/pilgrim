@@ -7,7 +7,11 @@ $navHeight: 60px;
 	font-family: sans-serif;
 	border-top: $navHeight*(4/5) solid $red;
 	margin: 0;
+	div {
+		padding-top: $navHeight;
+	}
 	nav {
+		display: none;
 		position: absolute;
 		left: 5%;
 		background: $lightBeige;

@@ -3,20 +3,22 @@ parsed = {}
 proficiency = 1
 
 updateArticle = (value) ->
-	proficiency = value/3
-	$('#article').html(template(parsed))
+  proficiency = value/3
+  $('#article').html(template(parsed))
 
 Handlebars.registerHelper "checkProficiency", (level, options) ->
-	if level >= proficiency
-		return options.fn(this)
-	return options.inverse(this)
+  console.log("Meow.")
+  if level >= proficiency
+    console.log("Meow.")
+    return options.fn(this)
+  return options.inverse(this)
 
 $ ->
-	template = Handlebars.compile($('#text').html())
-
-	$.getJSON '/test', (data) ->
-		parsed = data
-		$('#article').html(template(parsed))
+  template = Handlebars.compile($('#text').html())
+  article = $('[data-parsed-article]').text()
+  parsed = {words: JSON.parse(article)}
+  console.log parsed
+  $('#article').html(template(parsed))
 
   $('#slider').slider
     value:1
@@ -24,12 +26,5 @@ $ ->
     max:90
     step:1
     slide: (event, ui) ->
-    	updateArticle(ui.value)
-
-	$('#language').on 'change', ->
-    target = $(this).val()
-    $.getJSON 'https://www.googleapis.com/language/translate/v2?key=AIzaSyALN7om8pcP6n5BhSB0v9K23KQB4B1mefo&q=' + 'word' + '&source=en&target=' + target , (data) ->
-      replacement = (data.data["translations"][0]["translatedText"])
-      console.log(replacement)
-      # $(source).html(replacement)
-		$('#article').html(template(parsed))
+      console.log(ui.value)
+      updateArticle(ui.value)

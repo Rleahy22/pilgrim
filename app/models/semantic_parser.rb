@@ -4,7 +4,7 @@ class SemanticParser
   attr_reader :translation, :nodes, :corr
 	def initialize paragraph_in, src, tar, translation = nil
 		@paragraph_in = paragraph_in
-		@translation  = translation ||= Translator.fetch(paragraph_in, src, tar)
+		@translation  = translation ||= make_translation(src, tar)
 		@nodes        = node_translation
     @corr = Hash.new { |h,k| h[k] = []}
   end
@@ -62,6 +62,11 @@ class SemanticParser
        end
     end
     nodes
+  end
+
+  def make_translation(src, tar)
+    translator = Translator.new(@paragraph_in, src, tar)
+    translator.fetch
   end
 end
 
