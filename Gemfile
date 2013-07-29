@@ -17,6 +17,10 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem 'nokogiri', '~> 1.5.3'
+gem 'feedzirra', :git => 'https://github.com/pauldix/feedzirra.git'
+gem 'htmlentities'
+
 gem "omniauth-google-oauth2"
 
 
