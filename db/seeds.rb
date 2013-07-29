@@ -12,3 +12,10 @@ word_array = full_text.split
 word_array.each do |word|
   Word.create(entry: word)
 end
+
+articles = Article.get_recent_articles("http://www.lefigaro.fr/rss/figaro_web.xml")
+article = Article.get_content(articles.first)
+Article.create( title: article["title"],
+                url: article["url"],
+                image: article["lead_image_url"],
+                content: article["content"])
