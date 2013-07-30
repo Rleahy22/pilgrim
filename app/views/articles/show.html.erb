@@ -1,20 +1,15 @@
-<!-- <#% @formatted.each do |word| %>
-  <#%= raw(word) %>
-<#% end %> -->
+<script data-parsed-article type="text/json" charset="utf-8"><%= @parsed_article.to_json.html_safe %>
+</script>
 
+<script id="text-template" type="text/x-handlebars-template">
+  {{#each words}}
+    {{#showSourceLanguage lvl}}
+      {{{src}}}
+    {{else}}
+      <b>{{{tar}}}</b>
+    {{/showSourceLanguage}}
+  {{/each}}
+</script>
 
-<script data-parsed-article type="text/json" charset="utf-8"><%= @parsed_article.to_json.html_safe %></script>
- <div id="slider"></div>
-<div id="article">
-  <script id="text" type="text/x-handlebars-template">
-
-      {{#each words}}
-        {{#checkProficiency lvl}}
-          {{{src}}}
-        {{else}}
-          <b>{{{tar}}}</b>
-        {{/checkProficiency}}
-      {{/each}}
-
-  </script>
-</div>
+<div id="slider"></div>
+<div id="article"></div>
