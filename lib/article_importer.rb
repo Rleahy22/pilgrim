@@ -17,7 +17,7 @@ class ArticleImporter
   end
 
   def fetch_json_content
-    @article_contents = @article_urls.first(3).map do |url|
+    @article_contents = @article_urls.map do |url|
       sleep 0.5
       api_format = "https://www.readability.com/api/content/v1/parser?url=#{url}&token=ee8e522664d780a6cd208df1d21fa424f7fe400d"
       JSON.parse(open(api_format).read)
