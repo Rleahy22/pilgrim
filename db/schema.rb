@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20130729132333) do
   create_table "articles", :force => true do |t|
     t.text     "title"
     t.text     "url"
-    t.text     "image"
+    t.string   "image"
     t.text     "content"
     t.text     "translatable"
     t.text     "summary"
