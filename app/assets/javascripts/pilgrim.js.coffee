@@ -1,23 +1,18 @@
-template = {}
-parsed = {}
-proficiency = 1
-
-updateArticle = (value) ->
-  proficiency = value/3
-  $('#article').html(template(parsed))
-
-Handlebars.registerHelper "checkProficiency", (level, options) ->
-  console.log("Meow.")
-  if level >= proficiency
-    console.log("Meow.")
-    return options.fn(this)
-  return options.inverse(this)
-
 $ ->
-  template = Handlebars.compile($('#text').html())
+  proficiency = 1
+  template = Handlebars.compile($('#text-template').html())
   article = $('[data-parsed-article]').text()
   parsed = {words: JSON.parse(article)}
-  console.log parsed
+
+  updateArticle = (slider_value, template, parsed) ->
+    proficiency = slider_value/3
+    $('#article').html(template(parsed))
+
+  Handlebars.registerHelper "showSourceLanguage", (level, options) ->
+    if level >= proficiency
+      return options.fn(this)
+    return options.inverse(this)
+
   $('#article').html(template(parsed))
 
   $('#slider').slider
@@ -26,5 +21,4 @@ $ ->
     max:90
     step:1
     slide: (event, ui) ->
-      console.log(ui.value)
-      updateArticle(ui.value)
+      updateArticle(ui.value, template, parsed)
