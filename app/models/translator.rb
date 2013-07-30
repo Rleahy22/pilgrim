@@ -1,13 +1,14 @@
 # encoding: UTF-8
-require 'htmlentities'
-require 'open-uri'
-require 'json'
-API_BASE = "https://www.googleapis.com/language/translate/v2?key=" + ENV['GAPI'] + "&q="
 class Translator
-  def initialize(query, source, target)
+  require 'htmlentities'
+  require 'open-uri'
+  require 'json'
+  API_BASE = "https://www.googleapis.com/language/translate/v2?key=" + ENV['GAPI'] + "&q="
+
+  def initialize(query, source_language, target_language)
     @query  = query
-    @source = source
-    @target = target
+    @source_language = source_language
+    @target_language = target_language
   end
 
 	def fetch
@@ -22,28 +23,32 @@ class Translator
 	end
 
   def translate(text)
-    text.join(' ').split('.').each_slice(5).map do |sentences|
-      sentence = URI.escape(sentences.join(' '))
-      api_request(sentence, @source, @target)[0]['translatedText'].split(' ')
+    sentences = text.join(' ').split('.')
+
+    sentences.each_slice(5).map do |paragraph|
+      escaped = URI.escape(paragraph.join(' '))
+      api_request(escaped, @source_language, @target_language)[0]['translatedText'].split(' ')
     end
   end
 
-  def verify(text)
+  def reverse_translation(text) # name?
     text.each_slice(100).map do |tar_arr|
+      # check if openuri will handle query params for you so you can avoid the &foo=bar stuff
       tar_words = URI.escape(tar_arr.join('&q='))
-      api_request(tar_words, @target, @source).map!(&:values)
+      api_request(tar_words, @target_language, @source_language).map!(&:values)
     end
   end
 
   def remove_html
-    words = @query.reject { |element| element =~ /\<.*\>/ }
+    @query.reject { |element| element =~ /\<.*\>/ }
   end
 
   def api_request(query, src, tar)
     puts "Processing a query in #{src} to #{tar}" + query
-    api_hit = open(API_BASE + query + "&source=" + src + "&target=" + tar)
-    api_return = JSON.parse(api_hit.read)
-    api_return['data']['translations']
+    # check if openuri will handle query params for you so you can avoid the &foo=bar stuff
+    response = open(API_BASE + query + "&source=" + src + "&target=" + tar)
+    json = JSON.parse(response.read)
+    json['data']['translations']
   end
 end
 

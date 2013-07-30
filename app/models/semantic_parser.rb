@@ -1,10 +1,11 @@
 # encoding: UTF-8
 class SemanticParser
   require_relative "translator"
+
   attr_reader :translation, :nodes, :corr
-	def initialize paragraph_in, src, tar, translation = nil
+	def initialize paragraph_in, src, target, translation = nil
 		@paragraph_in = paragraph_in
-		@translation  = translation ||= make_translation(src, tar)
+		@translation  = translation ||= make_translation(src, target)
 		@nodes        = node_translation
     @corr = Hash.new { |h,k| h[k] = []}
   end
@@ -12,19 +13,32 @@ class SemanticParser
   def parse
     correlate_nodes
     singlize
-    generate
+    convert_numbers_to_words
     @translation[:json]
 	end
 
-  def generate
+  # @nodes = {:verify => ["foo", "bar", "baz"], }
+  def correlate_nodes
+    @nodes[:verify].each do |index, verify|
+      @nodes[:source].each do |i, src|
+        @corr[i] << index if src.downcase == verify.downcase
+      end
+    end
+  end
+
+  def singlize
+    @corr.each do |k,h|
+      @corr[k] = h.min { |a,b| (k - a).abs <=> (k - b).abs }
+    end
+  end
+
+  def convert_numbers_to_words
     randomize
     @translation[:json] = {}
     @translation[:source].each.with_index do |src, index|
       @translation[:json][index] = @corr.key?(index) ? levels(@corr[index], src) : levels(src)
     end
   end
-
-	private
 
   def randomize
     @order = {}
@@ -40,19 +54,6 @@ class SemanticParser
     }
   end
 
-	def correlate_nodes
-		@nodes[:verify].each do |index, verify|
-      @nodes[:source].each do |i, src|
-        @corr[i] << index if src.downcase == verify.downcase
-      end
-		end
-	end
-
-	def singlize
-	  @corr.each do |k,h|
-	  	@corr[k] = h.min { |a,b| (k - a).abs <=> (k - b).abs }
-	  end
-	end
 
   def node_translation
     nodes = {:source => {}, :target => {}, :verify => {}}

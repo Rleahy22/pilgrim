@@ -1,3 +1,4 @@
+# delete this
 class WordsController < ApplicationController
   def index
     @words = Word.all

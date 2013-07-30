@@ -1,3 +1,5 @@
+# delete this if you aren't using it
+
 # previous = 0
 
 # untranslate = (source) ->

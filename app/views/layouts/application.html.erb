@@ -7,13 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="landing">
-<nav>
-	<%= link_to "Pilgrim", root_path %>
-	<%= link_to "Recent Articles", articles_path %>
-	<%= link_to "Sign In", "/auth/google_oauth2" %>
-	<%= link_to "About Pilgrim", root_path %>
-</nav>
-<%= yield %>
+  <nav>
+  	<%= link_to "Pilgrim", root_path %>
+  	<%= link_to "Recent Articles", articles_path %>
+  	<%= link_to "Sign In", "/auth/google_oauth2" %>
+  	<%= link_to "About Pilgrim", root_path %>
+  </nav>
+  <%= yield %>
 
 </body>
 </html>

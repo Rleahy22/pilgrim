@@ -16,9 +16,12 @@ ActiveRecord::Schema.define(:version => 20130729132333) do
   create_table "articles", :force => true do |t|
     t.text     "title"
     t.text     "url"
-    t.text     "image"
+    # image should be string, not a text column
+    t.string     "image"
     t.text     "content"
-    t.text     "translatable"
+    # translatabe is not a noun (but it's storing a noun)
+    t.text     "translatable_content"
+    # if you're not using this column, remove it
     t.text     "summary"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -33,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130729132333) do
     t.datetime "updated_at",  :null => false
   end
 
+  # drop this table if you don't need it
   create_table "words", :force => true do |t|
     t.string   "entry"
     t.datetime "created_at", :null => false

@@ -1,3 +1,6 @@
+# rename this file :\
+
+# globals are bad.
 template = {}
 parsed = {}
 proficiency = 1
@@ -14,7 +17,11 @@ Handlebars.registerHelper "checkProficiency", (level, options) ->
   return options.inverse(this)
 
 $ ->
-  template = Handlebars.compile($('#text').html())
+
+  if($("#text-template").length > 0) {
+
+  }
+  template = Handlebars.compile($('#text-template').html())
   article = $('[data-parsed-article]').text()
   parsed = {words: JSON.parse(article)}
   console.log parsed
@@ -27,4 +34,4 @@ $ ->
     step:1
     slide: (event, ui) ->
       console.log(ui.value)
-      updateArticle(ui.value)
+      article.update(ui.value)
