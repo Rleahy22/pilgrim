@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Pilgrim</title>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,9 +10,8 @@
 <body id="landing">
 <nav>
 	<%= link_to "Pilgrim", root_path %>
-	<%= link_to "Recent Articles", articles_path %>
+	<%= link_to "About Pilgrim", articles_path %>
 	<%= link_to "Sign In", "/auth/google_oauth2" %>
-	<%= link_to "About Pilgrim", root_path %>
 </nav>
 <%= yield %>
 
