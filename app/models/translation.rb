@@ -1,3 +1,5 @@
 class Translation < ActiveRecord::Base
-  attr_accessible :source_text, :target_translation, :reverse_translation
+  attr_accessible :json, :language, :article
+  serialize :json, Hash
+  belongs_to :article
 end

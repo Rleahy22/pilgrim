@@ -3,7 +3,7 @@ class CreateTranslations < ActiveRecord::Migration
     create_table :translations do |t|
       t.integer :article_id
       t.string :language
-      t.text :text
+      t.text :json
       t.timestamps
     end
   end
