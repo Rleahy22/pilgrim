@@ -3,10 +3,10 @@
 
 <script id="text-template" type="text/x-handlebars-template">
   {{#each words}}
-    {{#showSourceLanguage lvl}}
-      {{{src}}}
+    {{#showSourceLanguage level}}
+      {{{source}}}
     {{else}}
-      <b>{{{tar}}}</b>
+      <b>{{{target}}}</b>
     {{/showSourceLanguage}}
   {{/each}}
 </script>

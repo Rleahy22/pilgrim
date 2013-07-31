@@ -8,10 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body id="landing">
+	<%= link_to "Pilgrim", root_path, :class => "nav-logo" %>
 <nav>
-	<%= link_to "Pilgrim", root_path %>
-	<%= link_to "About Pilgrim", articles_path %>
-	<%= link_to "Sign In", "/auth/google_oauth2" %>
+  <%= link_to "About Pilgrim", articles_path, :class => "nudge" %>
+  <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
 </nav>
 <%= yield %>
 
