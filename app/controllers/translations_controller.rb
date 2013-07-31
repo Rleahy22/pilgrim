@@ -1,5 +1,2 @@
-def TranslationsController < ApplicationController
-  def create
-  
-  end
+class TranslationsController < ApplicationController
 end
