@@ -18,10 +18,12 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 gem 'nokogiri', '~> 1.5.3'
-gem 'feedzirra', :git => 'https://github.com/pauldix/feedzirra.git'
+gem 'feedzirra'#, '~> 0.2.0.rc2'
 gem 'htmlentities'
 
 gem "omniauth-google-oauth2"
+
+gem 'whenever', require: false
 
 
 group :development, :test do
