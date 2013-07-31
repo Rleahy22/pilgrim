@@ -22,7 +22,7 @@ describe ArticleImporter do
       french.fetch_and_import
     end
     it "calls reject article urls" do
-      french.should receive(:reject_article_urls)
+      french.should receive(:reject_existing_urls)
       french.fetch_and_import
     end
     it "calls fetches json content" do
