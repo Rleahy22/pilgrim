@@ -8,4 +8,6 @@ Pilgrim::Application.routes.draw do
   get '/test' => 'parsers#test'
 
   resources :articles
+
+  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 end
