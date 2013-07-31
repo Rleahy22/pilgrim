@@ -18,6 +18,16 @@ $ ->
     slide: (event, ui) ->
       window.article.updateTranslation(ui.value)
 
+  $('#article').on 'mouseenter', '.foreign', ->
+    current = $(this)
+    word = current.html()
+    $.getJSON 'https://www.googleapis.com/language/translate/v2?key=AIzaSyALN7om8pcP6n5BhSB0v9K23KQB4B1mefo&q=' + word + '&source=en&target=fr', (data) ->
+      replacement = data.data["translations"][0]["translatedText"]
+      current.html replacement
+      current.effect "highlight", {color:"#B8B8B8"}, 700
+    $('#article').on 'mouseleave', '.foreign', ->
+      current.html word
+
   window.article.render()
 
 window.Article = class Article
