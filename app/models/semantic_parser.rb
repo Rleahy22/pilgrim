@@ -1,83 +1,78 @@
 # encoding: UTF-8
 class SemanticParser
-  require_relative "translator"
-  attr_reader :translation, :nodes, :corr
-	def initialize paragraph_in, src, tar, translation = nil
-		@paragraph_in = paragraph_in
-		@translation  = translation ||= make_translation(src, tar)
-		@nodes        = node_translation
-    @corr = Hash.new { |h,k| h[k] = []}
+  attr_reader :input, :translation, :source, :target, :reverse_translation, :correlated_words, :json
+	def initialize input, source_lang, target_lang, translation_from_test = nil
+		@input               = input
+		@translation         = translation_from_test ||= translate(source_lang, target_lang)
+    @source              = translation[:source]
+    @target              = translation[:target]
+    @reverse_translation = translation[:verify]
+    @correlated_words    = Hash.new { |h,k| h[k] = []}
+    @json                = {}
   end
 
   def parse
-    correlate_nodes
-    singlize
-    generate
-    @translation[:json]
+    correlate_words
+    select_correct_correlation
+    generate_json
+    assign_proficiency_levels
+    return json
 	end
 
-  def generate
-    randomize
-    @translation[:json] = {}
-    @translation[:source].each.with_index do |src, index|
-      @translation[:json][index] = @corr.key?(index) ? levels(@corr[index], src) : levels(src)
-    end
-  end
-
-	private
-
-  def randomize
-    @order = {}
-    @corr.values.shuffle.each.with_index { |tar_i, index| @order[tar_i] = (index % 30)+1 }
-  end
-
-  def levels tar_i, src = nil
-    return { "lvl" => 9001, "src" => tar_i } unless src
-    {
-      "lvl" => @order[tar_i],
-      "src" => src,
-      "tar" => @translation[:target][tar_i]
-    }
-  end
-
-	def correlate_nodes
-		@nodes[:verify].each do |index, verify|
-      @nodes[:source].each do |i, src|
-        @corr[i] << index if src.downcase == verify.downcase
+  def correlate_words
+    reverse_translation.each_with_index do |reverse, reverse_index|
+      source.each_with_index do |source, source_index|
+        @correlated_words[source_index] << reverse_index if source.downcase == reverse.downcase
       end
-		end
-	end
-
-	def singlize
-	  @corr.each do |k,h|
-	  	@corr[k] = h.min { |a,b| (k - a).abs <=> (k - b).abs }
-	  end
-	end
-
-  def node_translation
-    nodes = {:source => {}, :target => {}, :verify => {}}
-    @translation.keys.each do |key|
-       @translation[key].each.with_index do |val, i|
-         nodes[key][i] = val
-       end
     end
-    nodes
   end
 
-  def make_translation(src, tar)
-    translator = Translator.new(@paragraph_in, src, tar)
+  def select_correct_correlation
+	  correlated_words.each do |source,possible_matches|
+	  	@correlated_words[source] = possible_matches.min do |a,b| 
+        (source - a).abs <=> (source - b).abs
+      end
+	  end
+  end
+
+  def generate_json
+    source.each.with_index do |source, index|
+      @json[index] = correlated_words.key?(index) ? dynamic(source, index) : static(source)
+    end
+  end
+
+  def assign_proficiency_levels
+    json.each do |index,options|
+      if options.key?("target")
+        json[index]["level"] = index % 10
+      else
+        json[index]["level"] = 9001
+      end
+    end
+  end
+
+  def dynamic source, index
+    { "source" => source, "target" => target[index] }
+  end
+
+  def static source
+    { "source" => source }
+  end
+
+  def translate(source_lang, target_lang)
+    translator = Translator.new(input, source_lang, target_lang)
     translator.fetch
   end
 end
 
 
 if $0 == __FILE__
-# 	G_INPUT 			= "Ultra High Definition TV technology offers resolution measuring 3840 x 2160 pixels, or 8 megapixels -- four times that of 1080p televisions, which offer 2 megapixels of resolution.Besides far higher resolution, one advantage pointed out by industry pundits is that 4K TV can show passive 3D better than today's 1080p sets."
-# 	G_RESPONSE 	= "La technologie de TV haute définition Ultra offre mesurant 3840 x 2160 pixels, soit 8 mégapixels résolution - quatre fois celle des téléviseurs 1080p, offrant 2 mégapixels de résolution. D'ailleurs beaucoup plus haute résolution, un avantage souligné par les experts de l'industrie est que TV 4K 3D passive peut montrer mieux que jeux 1080p d'aujourd'hui."
-# 	G_VERIFY			= ["the", "technology", "of", "TV", "high", "definition", "ultra", "offers", "measuring", "3840", "x", "2160", "pixels", "or", "8", "megapixel", "resolution", "-", "four", "times", "that", "of", "TVs", "1080p", "offering", "2", "megapixel", "of", "resolution", "Indeed", "a lot", "more", "high", "resolution", "a", "advantage", "out", "by", "the", "experts", "of", "industry", "is", "that", "TV", "4K", "3D", "passive", "can", "show", "more", "that", "games", "1080p", "today"]
+ 	G_INPUT 			= "Ultra High Definition TV technology offers resolution measuring 3840 x 2160 pixels, or 8 megapixels -- four times that of 1080p televisions, which offer 2 megapixels of resolution.Besides far higher resolution, one advantage pointed out by industry pundits is that 4K TV can show passive 3D better than today's 1080p sets."
+ 	G_RESPONSE 	= "La technologie de TV haute définition Ultra offre mesurant 3840 x 2160 pixels, soit 8 mégapixels résolution - quatre fois celle des téléviseurs 1080p, offrant 2 mégapixels de résolution. D'ailleurs beaucoup plus haute résolution, un avantage souligné par les experts de l'industrie est que TV 4K 3D passive peut montrer mieux que jeux 1080p d'aujourd'hui."
+ 	G_VERIFY			= ["the", "technology", "of", "TV", "high", "definition", "ultra", "offers", "measuring", "3840", "x", "2160", "pixels", "or", "8", "megapixel", "resolution", "-", "four", "times", "that", "of", "TVs", "1080p", "offering", "2", "megapixel", "of", "resolution", "Indeed", "a lot", "more", "high", "resolution", "a", "advantage", "out", "by", "the", "experts", "of", "industry", "is", "that", "TV", "4K", "3D", "passive", "can", "show", "more", "that", "games", "1080p", "today"]
 
-# 	parser = SemanticParser.new(nil, nil, nil, {:source => G_INPUT.split, :target => G_RESPONSE.split, :verify => G_VERIFY})
-#   parser.parse
+ 	parser = SemanticParser.new(nil, nil, nil, {:source => G_INPUT.split, :target => G_RESPONSE.split, :verify => G_VERIFY})
+  parser.parse.each { |x| puts x.inspect }
   # article = ["<div>", "<p class=\"fig-chapo\">", "Des", "hackers", "ont", "pénétré", "à", "partir", "de", "serveurs", "basés", "en", "Chine", "plusieurs", "systèmes", "informatiques", "du", "gouvernement", "d'Ottawa,", "obligeant", "celui-ci", "à", "couper", "certains", "de", "ses", "accès", "Internet.", "Pékin", "dément", "toute", "implication.", "</p>", "<div class=\"fig-article-body\">", "<p>", "Ce", "n'est", "pas", "la", "première", "affaire", "du", "genre.", "Le"]
   # parser = SemanticParser.new(article, 'fr', 'en')
   # parser.parse.values.each do |v|

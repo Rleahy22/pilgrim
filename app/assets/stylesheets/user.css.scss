@@ -1,63 +1,150 @@
-$lightBeige: #E0DFCD;
-$black: #171717;
-$red: #750907;
-$darkBeige: #b3a174;
-$navHeight: 60px;
-#landing {
-	font-family: sans-serif;
-	border-top: $navHeight*(4/5) solid $red;
-	margin: 0;
-	div {
-		padding-top: $navHeight;
-	}
-	nav {
-		display: none;
-		position: absolute;
-		left: 5%;
-		background: $lightBeige;
-		width: 90%;
-		margin: -$navHeight*(2/5) auto 0 auto;
-		height: $navHeight;
-		z-index: 2;
-		a {
-			display: block;
-			height: $navHeight;
-			line-height: $navHeight;
-			float: left;
-			width: 25%;
-			text-align: center;
-			color: $black;
-			text-decoration: none;
-			&:hover {
-				background: linear-gradient(#E0DFCE 0%, #E0DFCE 100%)
-			}
-		}
-	}
-	.picture {
-		background: url('reader_blur.jpg');
-		background-size: cover;
-		z-index: 1;
-		height: 500px;
-		h1 {
-			margin: 0;
-			padding-top: 80px;
-			width: 30%;
-			font-size: 72pt;
-			margin-left: 18%
-		}
-		a {
-			padding-left: 200px;
-			font-size: 24pt;
-		}
-	}
-	.about {
-		background: white;
-		h3 {
-			margin: 0;
-			padding: 40px 0;
-			width: 100%;
-			text-align: center;
-			font-size: 24pt;
-		}
-	}
+@keyframes rot {
+  from {
+    transform: rotate(0deg)
+    translate(-150px)
+    rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+    translate(-150px) 
+    rotate(-360deg);
+  }
 }
+@-webkit-keyframes rot {
+  from {
+    -webkit-transform: rotate(0deg)
+    translate(-8px)
+    rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg)
+    translate(-8px) 
+    rotate(-360deg);
+  }
+}
+
+#landing {
+  box-shadow: inset 0 60px 0px -10px #3498db;
+  background: #F8F5ED;  
+  color: #6E2E0C;
+  nav {
+    width: 70%;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+    a, a:hover, a:visited, a:active { color: #e67e22; text-decoration: none; }
+    a {
+      display: block;
+      font-size: 18pt; 
+      float: left;
+      text-align: center;
+      width: 33%;
+      background: white;
+      &:hover {
+        background: linear-gradient(#FFF 0%, #EEE 100%);
+      }
+    }
+  }
+  .hello-world {
+    background: url('world_texture.png');
+    margin: -70px 0 0 0;
+    height: 500px;
+    box-shadow: inset 0 -40px 40px -40px rgba(110,46,12,0.15); //#6E2E0C
+    .world {
+      background: url('earth.png');
+      background-position: 140% -15%;
+      background-size: 60% auto;
+      background-repeat: no-repeat;
+      height: 500px;
+      width: 100%;
+      position: absolute;
+    } 
+    .hello, .bonjour, .hola, .gutin-tag, .buon-giorno, .previet, .konnichiwa, .chinese {
+      text-shadow: 0 0 2px white;
+      position: absolute;
+      font-size: 24pt;
+    }
+    .hello, .hola, .konnichiwa { animation: rot 10s infinite linear;-webkit-animation: rot 10s infinite linear; }
+    .bonjour, .previet, .chinese { animation: rot 8s infinite linear;-webkit-animation: rot 8s infinite linear; }
+    .gutin-tag, .buon-giorno, .konnichiwa { animation: rot 12s infinite linear;-webkit-animation: rot 12s infinite linear; }
+    .hello        { right: 20%;top: 20%; }
+    .bonjour      { right: 15%;top: 80%; }
+    .hola         { right: 25%;top: 70%; }
+    .gutin-tag    { right: 08%;top: 40%; }
+    .buon-giorno  { right: 28%;top: 60%; }
+    .previet      { right: 06%;top: 60%; }
+    .konnichiwa   { right: 18%;top: 30%; }
+    .chinese      { right: 22%;top: 50%; }
+  }
+  .cta {
+    h1, h2 { width: 100%; text-align: left; padding: 0; margin: 0; }
+    width: 40%;
+    padding-left: 10%;
+    height: 100%;
+    padding-top: 150px;
+    h1 {
+      font-size: 72pt;
+    }
+  }
+  .what {
+    h1 {
+      font-size: 30pt;
+      text-align: center;
+    } 
+    .icons {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .global-news { background: url('globe.png'); }
+    .without-borders { background: url('arrow.png') }
+    .global-news, .without-borders {
+      display: inline-block;
+      width: 49%;
+      height: 400px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .pointer-box {
+      width: 80%;
+      margin: 0 auto;
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+    .carrot {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      background: #3498db;  
+      -webkit-transform: rotate(45deg);
+    }
+    .icon-description {
+      padding: 40px;
+      color: white;
+      clear: both;
+      width: 80%;
+      margin: 0 auto;
+      height: 300px;
+      background: #3498db; //#2ecc71
+      text-align: center;
+      h1 {
+        padding: 0;
+        font-size: 30pt;
+      }
+      p {
+        font-size: 18pt;
+        line-height: 2;
+        padding: 10px 0 0 0;
+      }
+    } 
+  }
+  padding: 20px 0 0 0;
+  margin: 0;
+  width: 1440px;
+  position: relative;
+  margin: 0 auto;
+}
+
