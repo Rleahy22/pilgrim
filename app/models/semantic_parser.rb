@@ -44,7 +44,7 @@ class SemanticParser
   def assign_proficiency_levels
     json.each do |index,options|
       if options.key?("target")
-        json[index]["level"] = index % 10
+        json[index]["level"] = index % 30
       else
         json[index]["level"] = 9001
       end
