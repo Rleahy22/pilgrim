@@ -1,0 +1,49 @@
+#article_title {
+  padding: 5% 5% 0 5%;
+  background-color: white;
+  margin: 6% auto 0 auto;
+  width: 50%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 36pt;
+}
+
+#article {
+  padding: 3% 5% 5% 5%;
+  background-color: white;
+  margin: auto;
+  width: 50%;
+  font-family: Times;
+  font-size: 14pt;
+}
+
+#preferences {
+  width: 25%;
+  position: fixed;
+  top: 14%;
+  right: 0%;
+  display: inline-block;
+  #options {
+    width: 35%;
+    margin: 0;
+    #language {
+      background: transparent;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 18pt;
+      font-weight: 300;
+      border: 0;
+      box-shadow: -3px 3px 0 #e2dfd7;
+      border-radius: 0;
+      width: 100%;
+      padding: 3%;
+      -webkit-appearance: none;
+      // overflow: hidden;
+      background: url(Dropdown_Arrow.png) no-repeat right white;
+      background-size: 30px 30px;
+    }
+  }
+  #slider {
+    margin-top: 4%;
+    width: 35%;
+  }
+}
+

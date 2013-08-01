@@ -1,29 +1,33 @@
 <script data-parsed-article type="text/json" charset="utf-8"><%= @parsed_article.to_json.html_safe %>
 </script>
 
-<script id="text-template" type="text/x-handlebars-template">
-  {{#each words}}
-    {{#showSourceLanguage level}}
-      {{{source}}}
-    {{else}}
-      <b class="foreign">{{{target}}}</b>
-    {{/showSourceLanguage}}
-  {{/each}}
-</script>
-
-<div id="options">
-  <select name="Language" id="language">
-    <option value="en">English</option>
-    <option value="es">Spanish</option>
-    <option value="fr">French</option>
-    <option value="de">German</option>
-    <option value="it">Italian</option>
-    <option value="pt">Portuguese</option>
-    <option value="ja">Japanese</option>
-    <option value="zh-CN">Mandarin</option>
-    <option value="ru">Russian</option>
-    <option value="el">Greek</option>
-  </select>
+<div id="content">
+  <script id="text-template" type="text/x-handlebars-template">
+    {{#each words}}
+      {{#showSourceLanguage level}}
+        {{{source}}}
+      {{else}}
+        <b class="foreign">{{{target}}}</b>
+      {{/showSourceLanguage}}
+    {{/each}}
+  </script>
 </div>
-<input id="slider" data-source="<%= @language %>" type="range" name="points" min="1" max="30" step="1" value="1">
+<div id="preferences">
+  <div id="options">
+    <select name="Language" id="language">
+      <option class="choice" value="en">English</option>
+      <option class="choice" value="es">Espanol</option>
+      <option class="choice" value="fr">Francais</option>
+      <option class="choice" value="de">Deutsch</option>
+      <option class="choice" value="it">Italiano</option>
+      <option class="choice" value="pt">Portugues</option>
+      <option class="choice" value="ja">Japanese</option>
+      <option class="choice" value="zh-CN">Mandarin</option>
+      <option class="choice" value="ru">Russian</option>
+      <option class="choice" value="el">Greek</option>
+    </select>
+  </div>
+  <input id="slider" data-source="<%= @language %>" type="range" name="points" min="1" max="30" step="1" value="1">
+</div>
+<h1 id="article_title"><%= @article.title %> </h1>
 <div id="article" data-source="<%= @article.source_language %>"></div>

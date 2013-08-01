@@ -7,6 +7,7 @@ class CreateArticles < ActiveRecord::Migration
       t.text   :content
       t.text   :translatable
       t.text   :summary
+      t.string :source_language
 
       t.timestamps
     end
