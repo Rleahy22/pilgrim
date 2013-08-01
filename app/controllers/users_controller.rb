@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
 	def index
 
 	end
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
 	def update
 		languages = ''
 		params.each { |key,value| languages << key + ',' if value == "1" }
-		user = User.find(1)
+		user = current_user
 		user.update_attributes(languages: languages[0..-2])
 
 		if params["interests"]
