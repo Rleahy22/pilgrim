@@ -9,7 +9,12 @@ class UsersController < ApplicationController
 		 										email:       callback[:info][:email],
 		  									given_name:  callback[:info][:first_name],
 		   									family_name: callback[:info][:last_name])
-		redirect_to root_url
+		session[:user_id] = @user.id
+		redirect_to user_path(@user)
+	end
+
+	def show
+		@user = current_user
 	end
 
 	def update
