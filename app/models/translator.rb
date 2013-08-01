@@ -22,7 +22,7 @@ class Translator
 	end
 
   def translate(text)
-    text.join(' ').split('.').each_slice(5).map do |sentences|
+    text.join(' ').split(/[.:]/).each_slice(3).map do |sentences|
       sentence = URI.escape(sentences.join(' '))
       api_request(sentence, @source, @target)[0]['translatedText'].split(' ')
     end
