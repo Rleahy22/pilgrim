@@ -1,38 +1,70 @@
 <div class="hello-world">
-  <div class="world">
-  </div>
-    <div class="cta">
-      <h1>Pilgrim</h1>
-      <h2>Global News Without Borders</h2>
+    <div class="cta sharp-shadow">
+      <h1>News from all around the world.<br> At any level that need.</h1>
+      <h2>With Pilgrim's unique proficiency slider, language will never be a barrier again.  Try the slider on the right.</h2><br>
+      <%= link_to "Sign Up Today", '/auth/google_oauth2' %>
+    </div>
+    <div class="cta-demo sharp-shadow">
+      Pilgrim is the first global news aggrigator.  Pilgrim helps break down barriers between foreign countries, providing you with news articles in a variety of languages, originating from every corner of the globe.  With articles taylored to your interests.
     </div>
 </div>
 
 <div class="what">
   <h1>What is Pilgrim?</h1>
   <div class="icons">
-    <div class="global-news"></div>
-    <div class="without-borders"></div>
+    <div class="globe sharp-shadow"></div>
+    <div class="translate sharp-shadow"></div>
+    <div class="dbc sharp-shadow"></div>
   </div>
   <div class="pointer-box">
     <div class="carrot"></div>
   </div>
-  <div class="icon-description">
-    <h1>The First Global News Aggregator</h1>
-    <p>Pilgrim is the first global news aggrigator.  Pilgrim helps break down barriers between foreign countries, providing you with news articles in a variety of languages, originating from every corner of the globe.  With articles taylored to your interests, Pilgrim helps provide you with everything you need to stay up to date with whats happening in the world</p>
+  <div class="icon-description"><div class="pseudo-box-shadow"></div>
+    <span id="globe"><h1>The First Global News Aggregator</h1>
+        <p>Pilgrim is the first global news aggrigator.  Pilgrim helps break down barriers between foreign countries, providing you with news articles in a variety of languages, originating from every corner of the globe.  With articles taylored to your interests, Pilgrim helps provide you with everything you need to stay up to date with whats happening in the world</p></span>
+    <span id="translate" style="display:none;"><h1>Foreign Languages at your Level</h1>
+        <p>Pilgrim offers a simply yet powerful slider that personally tailors every article to your proficiency.  Effortlessly immerse yourself in a language, or clearify an article wirtten in a foreign language with ease.</p></span>
+    <span id="dbc" style="display:none"><h1>Dev BootCamp</h1>
+        <p>Pilgrim was a project concieved and created by 3 boots at Dev BootCamp, a 9 week intensive for web developement.  After hundreds of hours learning the material, each team was given once week to develope a web application.</p></span>
   </div>
 </div>
 
 <script>
 (function () {
-  var $boxes = $('.icon-description, .carrot');
-  var $carrot = $('.carrot');
-  $('.without-borders').on('click', function() { 
-    $boxes.animate({backgroundColor: '#2ecc71'});
-    $carrot.animate({left: '75%'});
+  $(window).resize(function() {
+    if( $(window).width() < 1200 ) { 
+      $('.cta-demo').css('font-size', '14pt') 
+      $('.cta h1').css('font-size', '16pt')
+    } else {
+      $('.cta-demo').css('font-size', '16pt')  
+      $('.cta h1').css('font-size', '18pt')
+    }
   });
-  $('.global-news').on('click', function() {
-    $boxes.animate({backgroundColor: '#3498db'});
-    $carrot.animate({left: '25%'});
+  if( $(window).width() < 1000 ) { console.log("Meow."); }
+  var $background = $('.pseudo-box-shadow, .carrot');
+  var $border = $('.icon-description');
+  var $carrot = $('.carrot');
+  var $text = $('.icon-description span');
+  $('.globe').on('click', function() { 
+    $background.animate({backgroundColor: '#96a240'});
+    $border.animate({borderColor: '#96a240'})
+    $carrot.animate({left: '14%'});
+    $text.hide();
+    $('#globe').fadeIn();
+  });
+  $('.translate').on('click', function() {
+    $background.animate({backgroundColor: '#5b0000'});
+    $border.animate({borderColor: '#5b0000'})
+    $carrot.animate({left: '48%'});
+    $text.hide();
+    $('#translate').fadeIn();
+  });
+  $('.dbc').on('click', function() {
+    $background.animate({backgroundColor: '#b87c47'});
+    $border.animate({borderColor: '#b87c47'})
+    $carrot.animate({left: '82%'});
+    $text.hide();
+    $('#dbc').fadeIn();
   });
 })()
 </script>
