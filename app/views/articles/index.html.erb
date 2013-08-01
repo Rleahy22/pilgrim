@@ -36,17 +36,37 @@
 
 
 <script>
-    var margin = $('.article').css('marginLeft');
-    $('.article').css('marginBottom',margin);
-    $('.vert-rectangle, .poster').css('height',400+parseInt(margin));
+    var showArticle = function(article, classes) {
+      console.log(classes)
+      articlePosition = article.position()
+      article.after('<div class="' + classes + ' token" style="opacity: 0"></div>')
+      article.css({
+        'position': 'absolute',
+        'top': articlePosition.top,
+        'left': articlePosition.left
+      });
+      article.animate({
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: 'auto'
+      }, function() {
+        article.removeClass("poster square vert-rectangle horiz-rectangle")
+        console.log(article.attr('class'))
+      });
+    };
 
     $('.article').on('click', function() {
-      clickedId = $(this).attr('id')
+      var $this = $(this);
+      var clickedId = $this.attr('id');
+      var totalTime = ( $('.article').length * 50 )
+      var articleClasses = $this.attr('class')
+      $this.addClass('active-article');
       $('.article').each(function(i,obj) {
-        console.log("obj: " + $(obj).attr('id') + " clickedId: " + clickedId);
-        if( $(obj).attr('id') != clickedId ) {
-          $(obj).fadeTo(100 * i, 0.2);
-        }
+         if ( $(obj).attr('id') != clickedId ) {
+           $(obj).fadeTo(totalTime - i * 50, 0.0);
+         }
       });
+      $this.delay(totalTime).queue( showArticle($this, articleClasses) )
     });
 </script>
