@@ -2,9 +2,9 @@ class ArticlesController < ApplicationController
   require 'htmlentities'
   def index
     @articles = Article.all
-    # coder = HTMLEntities.new
-    # formatted = coder.decode(@article.translatable)
-    # @formatted = formatted.split("|&")
+    if current_user
+      @languages = current_user.languages
+    end
   end
 
   def show
