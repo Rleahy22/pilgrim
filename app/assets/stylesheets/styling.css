@@ -5,14 +5,15 @@
   width: 40%;
 }
 
+#slider {
+  position: fixed;
+  top: 50%;
+  right: 10%;
+}
+
 #language {
   margin: 2%;
   display: inline-block;
-}
-
-#slider {
-  display: inline-block;
-  width: 50%;
 }
 
 #article {
