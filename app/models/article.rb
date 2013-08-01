@@ -1,7 +1,7 @@
 class Article < ActiveRecord::Base
   require 'open-uri'
   CODER = HTMLEntities.new
-  attr_accessible :translatable, :content, :image, :title, :url, :summary
+  attr_accessible :translatable, :content, :image, :title, :url, :summary, :source_language
   has_many :translations
 
   def load_translation source_language, target_language

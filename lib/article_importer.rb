@@ -44,7 +44,8 @@ class ArticleImporter
        image: article["lead_image_url"],
        content: article["content"],
        summary: generate_summary(stripped_content),
-       translatable: generate_translatable(stripped_content)}
+       translatable: generate_translatable(stripped_content),
+       source_language: determine_source(article["title"])}
     end
   end
 
@@ -62,5 +63,12 @@ class ArticleImporter
     stripped_content.reject! { |el| el.empty? }
     words_split = stripped_content.map { |phrase| phrase.match(/<\/?[^>]*>/) ? phrase : phrase.split(' ') }
     words_split.flatten!.join("|&")
+  end
+
+  def determine_source(title)
+    query = URI::encode(title).gsub(' ', "%20")
+    request = open('https://www.googleapis.com/language/translate/v2/detect?key=' + ENV['GAPI'] + '&q=' + query)
+    google_response = JSON.parse(request.read)
+    google_response["data"]["detections"][0][0]["language"]
   end
 end

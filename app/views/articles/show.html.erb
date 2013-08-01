@@ -1,15 +1,17 @@
 <script data-parsed-article type="text/json" charset="utf-8"><%= @parsed_article.to_json.html_safe %>
 </script>
 
-<script id="text-template" type="text/x-handlebars-template">
-  {{#each words}}
-    {{#showSourceLanguage level}}
-      {{{source}}}
-    {{else}}
-      <b class="foreign">{{{target}}}</b>
-    {{/showSourceLanguage}}
-  {{/each}}
-</script>
+<div id="content">
+  <script id="text-template" type="text/x-handlebars-template">
+    {{#each words}}
+      {{#showSourceLanguage level}}
+        {{{source}}}
+      {{else}}
+        <b class="foreign">{{{target}}}</b>
+      {{/showSourceLanguage}}
+    {{/each}}
+  </script>
+</div>
 
 <div id="options">
   <select name="Language" id="language">
