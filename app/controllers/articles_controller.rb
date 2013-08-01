@@ -9,6 +9,15 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @parsed_article = @article.load_translation("fr", "en")
+    if session[:id]
+      @user = User.find(session[:id])
+      @language = @user.languages.sample
+    else
+      @language = ['en', 'fr', 'it', 'de', 'es', 'zh-CN', 'ja'].sample
+      until @language != @article.source_language
+        @language = ['en', 'fr', 'it', 'de', 'es', 'zh-CN', 'ja'].sample
+      end
+    end
+    @parsed_article = @article.load_translation(@article.source_language, @language)
   end
 end
