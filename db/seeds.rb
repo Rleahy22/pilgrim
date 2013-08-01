@@ -1,4 +1,7 @@
 SOURCES = {
+  english: {technology: "http://feeds.feedburner.com/TechCrunch/",
+            politics: "http://rss.cnn.com/rss/cnn_allpolitics.rss",
+            sports: "http://sports.espn.go.com/espn/rss/news"},
   spanish: {technology: "http://eleconomista.com.mx/tecnociencia/rss",
             politics: "http://eleconomista.com.mx/politica/rss",
             sports: "http://www.economista.com.mx/deportes/rss/"},
