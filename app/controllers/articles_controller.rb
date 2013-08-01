@@ -20,4 +20,13 @@ class ArticlesController < ApplicationController
     end
     @parsed_article = @article.load_translation(@article.source_language, @language)
   end
+
+  def grab
+    if request.xhr?
+      p params.inspect
+      @article = Article.find(params[:id])
+      render :partial => 'articles/grab', :article => @parsed_article
+    end
+  end
+
 end

@@ -3,29 +3,29 @@
   <% @articles.each_with_index do |article, index| %>
     <% case index%8 %>
     <% when 0 %>
-      <div id="<%= article.id %>" class="article poster">
+      <div id="<%= article.id %>" class="article poster" data-language="<%= article.source_language %>">
         <%= image_tag article.image, :width => "100px" %>
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
       </div>
     <% when 1,2 %>
-      <div id="<%= article.id %>" class="article square">
+      <div id="<%= article.id %>" class="article square" data-language="<%= article.source_language %>">
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
       </div>
     <% when 3,6 %>
-      <div id="<%= article.id %>" class="article square" style="clear:left;">
+      <div id="<%= article.id %>" class="article square" style="clear:left;" data-language="<%= article.source_language %>">
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
       </div>
     <% when 5 %> 
-      <div id="<%= article.id %>" class="article vert-rectangle">
+      <div id="<%= article.id %>" class="article vert-rectangle" data-language="<%= article.source_language %>">
         <%= image_tag article.image, :width => "100px" %>
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
       </div>
     <% when 4,7 %>
-      <div id="<%= article.id %>" class="article horiz-rectangle">
+      <div id="<%= article.id %>" class="article horiz-rectangle" data-language="<%= article.source_language %>">
         <%= image_tag article.image, :width => "100px" %>
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
@@ -68,5 +68,8 @@
          }
       });
       $this.delay(totalTime).queue( showArticle($this, articleClasses) )
+      $.post('/articles/grab', {id: clickedId, language: $this.data('language')}, function(data) {
+        $this.html(data);
+      });
     });
 </script>
