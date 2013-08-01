@@ -1,4 +1,7 @@
-<div class="date"><%= Time.now.strftime("%B %d, %Y") %></div>
+<div class="date">
+  <%= Time.now.strftime("%B %d, %Y") %>
+  <div class="show-all-articles"></div>
+</div>
 <div class="articles">
   <% @articles.each_with_index do |article, index| %>
     <% case index%8 %>
@@ -48,7 +51,7 @@
       article.animate({
         top: 0,
         left: 0,
-        width: '100%',
+        width: '99%',
         height: 'auto'
       }, function() {
         article.removeClass("poster square vert-rectangle horiz-rectangle")

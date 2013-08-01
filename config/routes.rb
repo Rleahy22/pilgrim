@@ -11,6 +11,6 @@ Pilgrim::Application.routes.draw do
   get '/test' => 'parsers#test'
 
   resources :articles
-  get '/articles/grab/:id' => 'articles#grab'
+  post '/articles/grab' => 'articles#grab'
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 end
