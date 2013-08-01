@@ -1,6 +1,6 @@
 <div class="date">
   <%= Time.now.strftime("%B %d, %Y") %>
-  <div class="show-all-articles"></div>
+  <div class="show-all-articles"> Back to Articles</div>
 </div>
 <div class="articles">
   <% @articles.each_with_index do |article, index| %>
@@ -39,10 +39,11 @@
 
 
 <script>
-    var showArticle = function(article, classes) {
-      console.log(classes)
+    var articleClasses = ""
+
+    var showArticle = function(article) {
       articlePosition = article.position()
-      article.after('<div class="' + classes + ' token" style="opacity: 0"></div>')
+      article.after('<div class="' + articleClasses + ' token" style="opacity: 0"></div>')
       article.css({
         'position': 'absolute',
         'top': articlePosition.top,
@@ -55,24 +56,45 @@
         height: 'auto'
       }, function() {
         article.removeClass("poster square vert-rectangle horiz-rectangle")
-        console.log(article.attr('class'))
+        $(".poster, .square, .vert-rectangle, .horiz-rectangle").slideUp();
+        $('.show-all-articles').fadeIn();
       });
     };
 
     $('.article').on('click', function() {
       var $this = $(this);
       var clickedId = $this.attr('id');
-      var totalTime = ( $('.article').length * 50 )
-      var articleClasses = $this.attr('class')
+      var totalTime = ( $('.article').length * 10 )
+      articleClasses = $this.attr('class')
       $this.addClass('active-article');
       $('.article').each(function(i,obj) {
          if ( $(obj).attr('id') != clickedId ) {
-           $(obj).fadeTo(totalTime - i * 50, 0.0);
+           $(obj).fadeTo(i*10, 0.0);
          }
       });
-      $this.delay(totalTime).queue( showArticle($this, articleClasses) )
-      $.post('/articles/grab', {id: clickedId, language: $this.data('language')}, function(data) {
-        $this.html(data);
+      $.ajax({
+        url: '/articles/grab',
+        type: 'POST',
+        data: {id: clickedId, language: $this.data('language')},
+        beforeSend: function() {
+          //$this.delay(totalTime).queue( showArticle($this) )
+          showArticle($this)
+        },
+        success: function(data) {
+          $this.html(data);
+        }
       });
+    });
+      $('.show-all-articles').on('click', function() {
+        var $this = $('.active-article')
+        $('.article').each(function(i,obj) {
+          $(obj).slideDown();
+          $(obj).fadeTo(i * 50, 1.0)
+        });
+        $this.removeClass('active-article')
+        $this.addClass(articleClasses)
+
+        $this.attr('style','');
+        $('.token').replaceWith($this)
     });
 </script>
