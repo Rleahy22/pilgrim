@@ -3,8 +3,6 @@ Pilgrim::Application.routes.draw do
 
   resources :users
 
-  resources :preferences
-
   get "/auth/google_oauth2/callback" => 'users#login'
 
   resources :words
