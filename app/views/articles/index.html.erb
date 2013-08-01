@@ -1,31 +1,34 @@
-<div class="date"><%= Time.now.strftime("%B %d, %Y") %></div>
+<div class="date">
+  <%= Time.now.strftime("%B %d, %Y") %>
+  <div class="show-all-articles"> Back to Articles</div>
+</div>
 <div class="articles">
   <% @articles.each_with_index do |article, index| %>
     <% case index%8 %>
     <% when 0 %>
-      <div id="<%= article.id %>" class="article poster">
+      <div id="<%= article.id %>" class="article poster" data-language="<%= article.source_language %>">
         <%= image_tag article.image, :width => "100px" %>
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
       </div>
     <% when 1,2 %>
-      <div id="<%= article.id %>" class="article square">
+      <div id="<%= article.id %>" class="article square" data-language="<%= article.source_language %>">
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
       </div>
     <% when 3,6 %>
-      <div id="<%= article.id %>" class="article square" style="clear:left;">
+      <div id="<%= article.id %>" class="article square" style="clear:left;" data-language="<%= article.source_language %>">
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
       </div>
-    <% when 5 %>
-      <div id="<%= article.id %>" class="article vert-rectangle">
+    <% when 5 %> 
+      <div id="<%= article.id %>" class="article vert-rectangle" data-language="<%= article.source_language %>">
         <%= image_tag article.image, :width => "100px" %>
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
       </div>
     <% when 4,7 %>
-      <div id="<%= article.id %>" class="article horiz-rectangle">
+      <div id="<%= article.id %>" class="article horiz-rectangle" data-language="<%= article.source_language %>">
         <%= image_tag article.image, :width => "100px" %>
         <%= article.title %><br>
         <%= link_to article.url, article.url %>
@@ -36,10 +39,11 @@
 
 
 <script>
-    var showArticle = function(article, classes) {
-      console.log(classes)
+    var articleClasses = ""
+
+    var showArticle = function(article) {
       articlePosition = article.position()
-      article.after('<div class="' + classes + ' token" style="opacity: 0"></div>')
+      article.after('<div class="' + articleClasses + ' token" style="opacity: 0"></div>')
       article.css({
         'position': 'absolute',
         'top': articlePosition.top,
@@ -48,25 +52,49 @@
       article.animate({
         top: 0,
         left: 0,
-        width: '100%',
+        width: '99%',
         height: 'auto'
       }, function() {
         article.removeClass("poster square vert-rectangle horiz-rectangle")
-        console.log(article.attr('class'))
+        $(".poster, .square, .vert-rectangle, .horiz-rectangle").slideUp();
+        $('.show-all-articles').fadeIn();
       });
     };
 
     $('.article').on('click', function() {
       var $this = $(this);
       var clickedId = $this.attr('id');
-      var totalTime = ( $('.article').length * 50 )
-      var articleClasses = $this.attr('class')
+      var totalTime = ( $('.article').length * 10 )
+      articleClasses = $this.attr('class')
       $this.addClass('active-article');
       $('.article').each(function(i,obj) {
          if ( $(obj).attr('id') != clickedId ) {
-           $(obj).fadeTo(totalTime - i * 50, 0.0);
+           $(obj).fadeTo(i*10, 0.0);
          }
       });
-      $this.delay(totalTime).queue( showArticle($this, articleClasses) )
+      $.ajax({
+        url: '/articles/grab',
+        type: 'POST',
+        data: {id: clickedId, language: $this.data('language')},
+        beforeSend: function() {
+          //$this.delay(totalTime).queue( showArticle($this) )
+          showArticle($this)
+        },
+        success: function(data) {
+          $this.html(data);
+        }
+      });
+    });
+      $('.show-all-articles').on('click', function() {
+        var $this = $('.active-article')
+        $('.article').each(function(i,obj) {
+          $(obj).slideDown();
+          $(obj).fadeTo(i * 50, 1.0)
+        });
+        $this.removeClass('active-article')
+        $this.addClass(articleClasses)
+
+        $this.attr('style','');
+        $('.token').replaceWith($this)
     });
 </script>
