@@ -3,7 +3,12 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
     if current_user
-      @languages = current_user.languages
+      @articles = []
+      @languages = current_user.languages.split(',')
+      @languages.each do |lang|
+        @articles << Article.find_all_by_source_language(lang)
+      end
+      @articles.flatten!
     end
   end
 

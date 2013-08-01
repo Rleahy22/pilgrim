@@ -1,29 +1,22 @@
-User ID: <%= @user.id %>
-<br>
+<%= @name %>
 
 <h2>Languages:</h2>
 
 <%= form_tag user_path, method: "put" do %>
-  <%= check_box_tag :english %>
-  <%= label_tag :english, "English" %>
+  <%= check_box_tag :en %>
+  <%= label_tag :en, "English" %>
 
-  <%= check_box_tag :french %>
-  <%= label_tag :french, "French" %>
+  <%= check_box_tag :fr %>
+  <%= label_tag :fr, "French" %>
 
-  <%= check_box_tag :italian %>
-  <%= label_tag :italian, "Italian" %>
+  <%= check_box_tag :it %>
+  <%= label_tag :it, "Italian" %>
 
-  <%= check_box_tag :german %>
-  <%= label_tag :german, "German" %>
+  <%= check_box_tag :de %>
+  <%= label_tag :de, "German" %>
 
-  <%= check_box_tag :spanish %>
-  <%= label_tag :spanish, "Spanish" %>
-
-  <%= check_box_tag :chinese %>
-  <%= label_tag :chinese, "Chinese" %>
-
-  <%= check_box_tag :japanese %>
-  <%= label_tag :japanese, "Japanese" %>
+  <%= check_box_tag :es %>
+  <%= label_tag :es, "Spanish" %>
 
   <%= submit_tag "Submit" %>
 <% end %>
