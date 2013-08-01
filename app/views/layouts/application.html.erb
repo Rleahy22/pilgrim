@@ -16,9 +16,9 @@
   	  <%= link_to "Sign Up", "/auth/google_oauth2", :class => "nudge" %>
   	  <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
     <% else %>
-      <%= link_to "My Feed", "#", :class => "nudge" %>
-      <%= link_to "Preferences", "/users/#{current_user.id}", :class => "nudge" %>
-      <%= link_to "Logout", "#", :class => "nudge" %>
+      <%= link_to "My Feed", user_articles_path(current_user) %>
+      <%= link_to "Preferences", user_path(current_user), :class => "nudge" %>
+      <%= link_to "Logout", user_logout_path(current_user), :class => "nudge" %>
 
     <% end %>
 	</div>

@@ -34,6 +34,9 @@ class UsersController < ApplicationController
 	end
 
 	def logout
+		puts
+		puts
+		puts "-------------------logout------------------------------------------"
 		session.clear
 		redirect_to root_url
 	end
