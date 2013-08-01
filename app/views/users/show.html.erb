@@ -1,0 +1,41 @@
+<h2>Languages:</h2>
+
+<%= form_tag user_path, method: "put" do %>
+  <%= check_box_tag :english %>
+  <%= label_tag :english, "English" %>
+
+  <%= check_box_tag :french %>
+  <%= label_tag :french, "French" %>
+
+  <%= check_box_tag :italian %>
+  <%= label_tag :italian, "Italian" %>
+
+  <%= check_box_tag :german %>
+  <%= label_tag :german, "German" %>
+
+  <%= check_box_tag :spanish %>
+  <%= label_tag :spanish, "Spanish" %>
+
+  <%= check_box_tag :chinese %>
+  <%= label_tag :chinese, "Chinese" %>
+
+  <%= check_box_tag :japanese %>
+  <%= label_tag :japanese, "Japanese" %>
+
+  <%= submit_tag "Submit" %>
+<% end %>
+
+<h2>Interests:</h2>
+
+<%= form_tag user_path, method: "put" do %>
+  <%= check_box_tag "interests[technology]" %>
+  <%= label_tag "interests[technology]", "Technology" %>
+
+  <%= check_box_tag "interests[politics]" %>
+  <%= label_tag "interests[politics]", "Politics" %>
+
+  <%= check_box_tag "interests[sports]" %>
+  <%= label_tag "interests[sports]", "Sports" %>
+
+  <%= submit_tag "Submit" %>
+<% end %>
