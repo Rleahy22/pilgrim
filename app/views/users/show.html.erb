@@ -1,6 +1,8 @@
 <div class="main">
 
-  <h2>Choose the language of the news you would like to read.</h2>
+  <h1>Welcome, <%= @user.given_name %>!</h1>
+
+  <h2>Choose the language of the news you would like to read:</h2>
 
   <%= form_tag user_path, method: "put" do %>
     <%= check_box_tag :en %>
@@ -21,7 +23,7 @@
     <%= submit_tag "Submit" %>
   <% end %>
 
-  <h2>Select the categories you are interested in. </h2>
+  <h2>Select the categories you are interested in:</h2>
 
   <%= form_tag user_path, method: "put" do %>
     <%= check_box_tag "interests[technology]" %>
