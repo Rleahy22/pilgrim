@@ -13,9 +13,9 @@ class ArticlesController < ApplicationController
       @user = User.find(session[:id])
       @language = @user.languages.sample
     else
-      @language = ['en', 'fr', 'it', 'de', 'es', 'zh-CN', 'ja'].sample
+      @language = ['en', 'fr', 'it', 'de', 'es'].sample
       until @language != @article.source_language
-        @language = ['en', 'fr', 'it', 'de', 'es', 'zh-CN', 'ja'].sample
+        @language = ['en', 'fr', 'it', 'de', 'es'].sample
       end
     end
     @parsed_article = @article.load_translation(@article.source_language, @language)
