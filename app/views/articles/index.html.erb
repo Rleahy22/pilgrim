@@ -41,12 +41,13 @@
     $('.vert-rectangle, .poster').css('height',400+parseInt(margin));
 
     $('.article').on('click', function() {
-      clickedId = $(this).attr('id')
+      var $this = $(this);
+      var clickedId = $this.attr('id');
+      $this.addClass('active-article');
       $('.article').each(function(i,obj) {
-        console.log("obj: " + $(obj).attr('id') + " clickedId: " + clickedId);
         if( $(obj).attr('id') != clickedId ) {
           $(obj).fadeTo(100 * i, 0.2);
         }
-      });
+      }).then($this.fadeTo(2000, 0.2)).then(removeClass('active-article'))
     });
 </script>

@@ -35,6 +35,9 @@ $brown: #3f1a05;
       box-shadow: -5px 5px $red, inset -2px 2px $red, inset 2px -2px $red;
     }
   }
+  .active-article, .active-article:hover {
+    box-shadow: -5px 5px $green, inset -2px 2px $green, inset 2px -2px $green;
+  }
   .poster {
     width: 74%;
     height: 400px;
