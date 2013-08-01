@@ -18,7 +18,7 @@ $brown: #3f1a05;
   background: $lightBeige;  
   min-width: 800px;
   max-width: 1440px;
-  position: absolute;
+  position: relative;
   z-index: -100;
   margin: 0 auto;
   color: $brown;
@@ -211,14 +211,15 @@ $brown: #3f1a05;
   footer {
     color: $lightBeige;
     background: $brown;
-    margin-top: 40px;
+    margin-top: 60px;
     text-align: center;
-    height: 50;
+    height: 50px;
     line-height: 50px;
     font-weight: 200;
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    //position: absolute;
+    //bottom: 0;
+    clear: both;
   }
   padding-bottom: 75px;
 }

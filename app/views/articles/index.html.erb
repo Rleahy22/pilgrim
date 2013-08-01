@@ -45,7 +45,7 @@
       $('.article').each(function(i,obj) {
         console.log("obj: " + $(obj).attr('id') + " clickedId: " + clickedId);
         if( $(obj).attr('id') != clickedId ) {
-          $(obj).hide();
+          $(obj).fadeTo(100 * i, 0.2);
         }
       });
     });
