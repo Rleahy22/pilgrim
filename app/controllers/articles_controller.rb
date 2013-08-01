@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   require 'htmlentities'
   def index
     @articles = Article.all
-    if current_user
+    if current_user && current_user.languages
       @articles = []
       @languages = current_user.languages.split(',')
       @languages.each do |lang|

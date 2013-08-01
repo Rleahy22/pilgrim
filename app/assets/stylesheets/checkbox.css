@@ -1,0 +1,31 @@
+.main {
+  margin: 100px 150px;
+}
+
+input[type=checkbox] {
+  display:none;
+}
+
+input[type=checkbox] + label {
+  background: #e2dfd7;
+  display:inline-block;
+  margin: 1px;
+  padding: 10px 10px;
+}
+
+input[type=checkbox]:checked + label {
+  background: #5b0000;
+  color: white;
+  display:inline-block;
+  margin: 1px;
+  padding: 10px 10px;
+}
+
+input[type=submit] {
+  display: block;
+  background: #5b0000;
+  color: white;
+  margin: 10px 0;
+  padding: 3px;
+  font-size: 12pt;
+}
