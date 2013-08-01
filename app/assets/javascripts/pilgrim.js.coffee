@@ -30,6 +30,11 @@ $ ->
 
   window.article.render()
 
+  $('#question').on 'mouseenter', ->
+    $('#how_to').css "visibility", "visible"
+    $('#question').on 'mouseleave', ->
+      $('#how_to').css "visibility", "hidden"
+
 window.Article = class Article
   constructor: (@el, @template, @translation) ->
     @proficiency = 1
