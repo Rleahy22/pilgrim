@@ -1,8 +1,8 @@
 <div class="hello-world">
-    <div class="cta sharp-shadow">
-      <h1>News from all around the world.<br> At any level that need.</h1>
-      <h2>With Pilgrim's unique proficiency slider, language will never be a barrier again.  Try the slider on the right.</h2><br>
-      <%= link_to "Sign Up Today", '/auth/google_oauth2' %>
+    <div class="cta">
+      <h1>Worldwide News</h1>
+      <h2>News from all around the globe, at any level you need.  Break down the language barrier today.</h2>
+      <%= link_to "Sign Up", '/auth/google_oauth2' %>
     </div>
     <div class="cta-demo sharp-shadow">
       Pilgrim is the first global news aggrigator.  Pilgrim helps break down barriers between foreign countries, providing you with news articles in a variety of languages, originating from every corner of the globe.  With articles taylored to your interests.
@@ -31,15 +31,6 @@
 
 <script>
 (function () {
-  $(window).resize(function() {
-    if( $(window).width() < 1200 ) { 
-      $('.cta-demo').css('font-size', '14pt') 
-      $('.cta h1').css('font-size', '16pt')
-    } else {
-      $('.cta-demo').css('font-size', '16pt')  
-      $('.cta h1').css('font-size', '18pt')
-    }
-  });
   if( $(window).width() < 1000 ) { console.log("Meow."); }
   var $background = $('.pseudo-box-shadow, .carrot');
   var $border = $('.icon-description');

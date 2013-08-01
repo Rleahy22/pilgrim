@@ -1,6 +1,52 @@
-<h3>Articles:</h3>
-<ul>
-  <% @articles.each do |article| %>
-    <li><%= link_to "#{article.title}", article_path(article) %></li>
+<div class="date"><%= Time.now.strftime("%B %d, %Y") %></div>
+<div class="articles">
+  <% @articles.each_with_index do |article, index| %>
+    <% case index%8 %>
+    <% when 0 %>
+      <div id="<%= article.id %>" class="article poster">
+        <%= image_tag article.image, :width => "100px" %>
+        <%= article.title %><br>
+        <%= link_to article.url, article.url %>
+      </div>
+    <% when 1,2 %>
+      <div id="<%= article.id %>" class="article square">
+        <%= article.title %><br>
+        <%= link_to article.url, article.url %>
+      </div>
+    <% when 3,6 %>
+      <div id="<%= article.id %>" class="article square" style="clear:left;">
+        <%= article.title %><br>
+        <%= link_to article.url, article.url %>
+      </div>
+    <% when 5 %> 
+      <div id="<%= article.id %>" class="article vert-rectangle">
+        <%= image_tag article.image, :width => "100px" %>
+        <%= article.title %><br>
+        <%= link_to article.url, article.url %>
+      </div>
+    <% when 4,7 %>
+      <div id="<%= article.id %>" class="article horiz-rectangle">
+        <%= image_tag article.image, :width => "100px" %>
+        <%= article.title %><br>
+        <%= link_to article.url, article.url %>
+      </div>
+    <% end %>
   <% end %>
-</ul>
+</div>
+
+
+<script>
+    var margin = $('.article').css('marginLeft');
+    $('.article').css('marginBottom',margin);
+    $('.vert-rectangle, .poster').css('height',400+parseInt(margin));
+
+    $('.article').on('click', function() {
+      clickedId = $(this).attr('id')
+      $('.article').each(function(i,obj) {
+        console.log("obj: " + $(obj).attr('id') + " clickedId: " + clickedId);
+        if( $(obj).attr('id') != clickedId ) {
+          $(obj).hide();
+        }
+      });
+    });
+</script>
