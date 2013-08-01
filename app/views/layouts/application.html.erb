@@ -11,15 +11,22 @@
 	<body id="landing">
 		<%= link_to "Pilgrim", root_path, :class => "nav-logo" %>
 	<div class="nav-links">
-	  <%= link_to "About Pilgrim", articles_path %>
-	  <%= link_to "Sign Up", "/auth/google_oauth2", :class => "nudge" %>
-	  <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
+    <% unless session[:user_id] %>
+      <%= link_to "About Pilgrim", articles_path %>
+  	  <%= link_to "Sign Up", "/auth/google_oauth2", :class => "nudge" %>
+  	  <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
+    <% else %>
+      <%= link_to "My Feed", user_articles_path(current_user) %>
+      <%= link_to "Preferences", user_path(current_user), :class => "nudge" %>
+      <%= link_to "Logout", user_logout_path(current_user), :class => "nudge" %>
+
+    <% end %>
 	</div>
 </nav>
 <%= yield %>
 
 <footer>
-	Pilgrim © was created by Tyler Shipe, Ryan Leahy, and Ben Yorke 
+	Pilgrim © was created by Tyler Shipe, Ryan Leahy, and Ben Yorke
 </footer>
 </body>
 </html>
