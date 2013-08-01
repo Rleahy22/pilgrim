@@ -21,7 +21,8 @@ $ ->
   $('#article').on 'mouseenter', '.foreign', ->
     current = $(this)
     word = current.html()
-    $.getJSON 'https://www.googleapis.com/language/translate/v2?key=AIzaSyALN7om8pcP6n5BhSB0v9K23KQB4B1mefo&q=' + word + '&source=en&target=fr', (data) ->
+    source = $('#article').data('source')
+    $.getJSON 'https://www.googleapis.com/language/translate/v2?key=AIzaSyALN7om8pcP6n5BhSB0v9K23KQB4B1mefo&q=' + word + '&source=en&target=' + source, (data) ->
       replacement = data.data["translations"][0]["translatedText"]
       current.html replacement
       current.effect "highlight", {color:"#B8B8B8"}, 700
