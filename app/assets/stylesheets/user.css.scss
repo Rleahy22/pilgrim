@@ -15,7 +15,7 @@ $brown: #3f1a05;
     padding: 30px;
 }
 #landing {
-  background: $lightBeige;  
+  background: $lightBeige;
   min-width: 800px;
   max-width: 1440px;
   position: relative;
@@ -40,7 +40,7 @@ $brown: #3f1a05;
     font-weight: 100;
     color: $brown;
     &:hover{
-      box-shadow: -7px 7px 0 $darkBeige;      
+      box-shadow: -7px 7px 0 $darkBeige;
     }
   }
   nav {
@@ -128,26 +128,26 @@ $brown: #3f1a05;
       font-size: 30pt;
       font-weight: 100;
       text-align: center;
-    } 
+    }
     .icons {
       width: 80%;
       margin: 0 auto;
-      .globe { 
-        background: url('globe.png'); 
-        background-size: contain; 
-        background-repeat: no-repeat; 
+      .globe {
+        background: url('globe.png');
+        background-size: contain;
+        background-repeat: no-repeat;
         background-position: center;
       }
-      .translate { 
-        background: url('translate_solid.png'); 
-        background-size: contain; 
-        background-repeat: no-repeat; 
+      .translate {
+        background: url('translate_solid.png');
+        background-size: contain;
+        background-repeat: no-repeat;
         background-position: center;
       }
       .dbc {
         background: url('devbootcamp.png');
-        background-size: contain; 
-        background-repeat: no-repeat; 
+        background-size: contain;
+        background-repeat: no-repeat;
         background-position: center;
       }
       div {
@@ -172,7 +172,7 @@ $brown: #3f1a05;
       position: absolute;
       top: 50%;
       left: 14%;
-      background: $green;  
+      background: $green;
       -webkit-transform: rotate(45deg);
     }
     .icon-description {
@@ -181,7 +181,7 @@ $brown: #3f1a05;
       clear: both;
       width: 80%;
       margin: 0 auto;
-      background: $lightBeige; 
+      background: $lightBeige;
       text-align: center;
       border: 4px solid $green;
       position: relative;
@@ -194,7 +194,7 @@ $brown: #3f1a05;
         line-height: 2;
         padding: 10px 0 0 0;
       }
-    } 
+    }
     .pseudo-box-shadow {
       background: $green;
       width: 100%;
@@ -217,8 +217,8 @@ $brown: #3f1a05;
     line-height: 50px;
     font-weight: 200;
     width: 100%;
-    //position: absolute;
-    //bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     clear: both;
   }
   padding-bottom: 75px;

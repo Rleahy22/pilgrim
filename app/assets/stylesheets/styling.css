@@ -1,25 +1,6 @@
-#options {
-  position: fixed;
-  top: 30%;
-  right: 10%;
-  width: 40%;
-}
-
-#slider {
-  position: fixed;
-  top: 50%;
-  right: 10%;
-}
-
 #language {
   margin: 2%;
   display: inline-block;
-}
-
-#article {
-  position: absolute;
-  top: 20%;
-  width: 40%;
 }
 
 .break {
