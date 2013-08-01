@@ -1,5 +1,16 @@
+#article_title {
+  padding: 5% 5% 0 5%;
+  background-color: white;
+  margin: 6% auto 0 auto;
+  width: 50%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 36pt;
+}
+
 #article {
-  margin: 8% auto;
+  padding: 3% 5% 5% 5%;
+  background-color: white;
+  margin: auto;
   width: 50%;
   font-family: Times;
   font-size: 14pt;
@@ -8,7 +19,7 @@
 #preferences {
   width: 25%;
   position: fixed;
-  top: 12%;
+  top: 14%;
   right: 0%;
   display: inline-block;
   #options {
@@ -31,7 +42,8 @@
     }
   }
   #slider {
-    margin-top: 2%;
+    margin-top: 4%;
     width: 35%;
   }
 }
+
