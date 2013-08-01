@@ -45,5 +45,21 @@
     margin-top: 4%;
     width: 35%;
   }
+  #question {
+    width: 30px;
+    height: auto;
+  }
+  #question:hover {
+    cursor: pointer;
+  }
+  #how_to {
+    visibility: hidden;
+    padding: 1%;
+    position: relative;
+    left: 38%;
+    width: 50%;
+    background-color: white;
+    box-shadow: -3px 3px 0 #e2dfd7;
+  }
 }
 
