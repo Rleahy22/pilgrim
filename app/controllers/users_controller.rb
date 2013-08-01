@@ -18,9 +18,11 @@ class UsersController < ApplicationController
 		user = User.find(1)
 		user.update_attributes(languages: languages[0..-2])
 
-		params["interests"].each do |interest|
-			category = user.interests.where(:name => interest[0]).first_or_initialize
-			category.id ? category.destroy : category.save
+		if params["interests"]
+			params["interests"].each do |interest|
+				category = user.interests.where(:name => interest[0]).first_or_initialize
+				category.id ? category.destroy : category.save
+			end
 		end
 		redirect_to user_path
 	end
