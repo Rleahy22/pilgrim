@@ -7,9 +7,9 @@ class UsersController < ApplicationController
 	def login
 		callback = request.env["omniauth.auth"]
 		@user = User.create(uid:         callback[:uid],
-		 										email:       callback[:info][:email],
-		  									given_name:  callback[:info][:first_name],
-		   									family_name: callback[:info][:last_name])
+			email:       callback[:info][:email],
+			given_name:  callback[:info][:first_name],
+			family_name: callback[:info][:last_name])
 		session[:user_id] = @user.id
 		redirect_to user_path(@user)
 	end
@@ -31,5 +31,13 @@ class UsersController < ApplicationController
 			end
 		end
 		redirect_to user_path
+	end
+
+	def logout
+		puts
+		puts
+		puts "-------------------logout------------------------------------------"
+		session.clear
+		redirect_to root_url
 	end
 end
