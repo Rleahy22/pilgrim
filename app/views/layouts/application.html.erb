@@ -7,13 +7,19 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body id="landing">
-	<%= link_to "Pilgrim", root_path, :class => "nav-logo" %>
 <nav>
-  <%= link_to "About Pilgrim", articles_path, :class => "nudge" %>
-  <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
+	<body id="landing">
+		<%= link_to "Pilgrim", root_path, :class => "nav-logo" %>
+	<div class="nav-links">
+	  <%= link_to "About Pilgrim", articles_path %>
+	  <%= link_to "Sign Up", "/auth/google_oauth2", :class => "nudge" %>
+	  <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
+	</div>
 </nav>
 <%= yield %>
 
+<footer>
+	Pilgrim © was created by Tyler Shipe, Ryan Leahy, and Ben Yorke 
+</footer>
 </body>
 </html>
