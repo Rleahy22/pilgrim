@@ -1,37 +1,42 @@
-<%= @name %>
+<div class="main">
 
-<h2>Languages:</h2>
+  <h2>Choose the language of the news you would like to read.</h2>
 
-<%= form_tag user_path, method: "put" do %>
-  <%= check_box_tag :en %>
-  <%= label_tag :en, "English" %>
+  <%= form_tag user_path, method: "put" do %>
+    <%= check_box_tag :en %>
+    <%= label_tag :en, "English" %>
 
-  <%= check_box_tag :fr %>
-  <%= label_tag :fr, "French" %>
+    <%= check_box_tag :fr %>
+    <%= label_tag :fr, "French" %>
 
-  <%= check_box_tag :it %>
-  <%= label_tag :it, "Italian" %>
+    <%= check_box_tag :it %>
+    <%= label_tag :it, "Italian" %>
 
-  <%= check_box_tag :de %>
-  <%= label_tag :de, "German" %>
+    <%= check_box_tag :de %>
+    <%= label_tag :de, "German" %>
 
-  <%= check_box_tag :es %>
-  <%= label_tag :es, "Spanish" %>
+    <%= check_box_tag :es %>
+    <%= label_tag :es, "Spanish" %>
 
-  <%= submit_tag "Submit" %>
-<% end %>
+    <%= submit_tag "Submit" %>
+  <% end %>
 
-<h2>Interests:</h2>
+  <h2>Select the categories you are interested in. </h2>
 
-<%= form_tag user_path, method: "put" do %>
-  <%= check_box_tag "interests[technology]" %>
-  <%= label_tag "interests[technology]", "Technology" %>
+  <%= form_tag user_path, method: "put" do %>
+    <%= check_box_tag "interests[technology]" %>
+    <%= label_tag "interests[technology]", "Technology" %>
 
-  <%= check_box_tag "interests[politics]" %>
-  <%= label_tag "interests[politics]", "Politics" %>
+    <%= check_box_tag "interests[politics]" %>
+    <%= label_tag "interests[politics]", "Politics" %>
 
-  <%= check_box_tag "interests[sports]" %>
-  <%= label_tag "interests[sports]", "Sports" %>
+    <%= check_box_tag "interests[sports]" %>
+    <%= label_tag "interests[sports]", "Sports" %>
 
-  <%= submit_tag "Submit" %>
-<% end %>
+    <%= check_box_tag "interests[business]" %>
+    <%= label_tag "interests[business]", "Business" %>
+
+    <%= submit_tag "Submit" %>
+  <% end %>
+
+</div>
