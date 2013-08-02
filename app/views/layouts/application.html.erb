@@ -14,7 +14,7 @@
 		  <%= link_to "Pilgrim", root_path, :class => "nav-logo" %>
 	      <div class="nav-links">
           <% unless session[:user_id] %>
-            <%= link_to "About Pilgrim", articles_path %>
+            <%= link_to "Try Pilgrim", articles_path %>
       	    <%= link_to "Sign Up", "/auth/google_oauth2", :class => "nudge" %>
       	    <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
           <% else %>
