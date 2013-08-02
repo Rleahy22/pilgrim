@@ -6,48 +6,44 @@
   <% @articles.each_with_index do |article, index| %>
     <% case index%8 %>
     <% when 0 %>
-
-      <div id="<%= article.id %>" class="article-tile poster">
-        <div class="fade-out-bottom"></div>
-        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
-        <span class="title-poster"><%= article.title %></span><br>
-        <div class="summary-poster"><%= raw(article.summary) %></div>
-      </div>
-
-    <% when 1,2 %>
-
-      <div id="<%= article.id %>" class="article-tile square">
-        <div class="fade-out-bottom"></div>
-        <span class="title-square"><%= article.title %></span><br>
-        <div class="summary-square"><%= raw(article.summary) %></div>
-      </div>
-
-    <% when 3,6 %>
-
-      <div id="<%= article.id %>" class="article-tile square" style="clear:left;">
-        <div class="fade-out-bottom"></div>
-        <span class="title-poster"><%= article.title %></span><br>
-        <div class="summary-poster"><%= raw(article.summary) %></div>
-      </div>
-
-    <% when 5 %>
-
-      <div id="<%= article.id %>" class="article-tile vert-rectangle">
-        <div class="fade-out-bottom"></div>
-        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
-        <span class="title-vert-rectangle"><%= article.title %></span><br>
-        <div class="summary-vert-rectangle"><%= raw(article.summary) %></div>
-      </div>
-
-    <% when 4,7 %>
-
-      <div id="<%= article.id %>" class="article-tile horiz-rectangle">
-        <div class="fade-out-bottom"></div>
-        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
-        <span class="title-horiz-rectangle"><%= article.title %></span><br>
-        <div class="summary-horiz-rectangle"><%= raw(article.summary) %></div>
-      </div>
-
+        <div id="<%= article.id %>" class="article-tile poster">
+          <div class="fade-out-bottom"></div>
+          <% if article.image %>
+            <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+          <% end %>
+          <div class="title-poster"><%= article.title %></div><p class="read-more"></p>
+          <div class="summary-poster"><%= raw(article.summary) %></div>
+        </div>
+      <% when 1,2 %>
+        <div id="<%= article.id %>" class="article-tile square">
+          <div class="fade-out-bottom"></div>
+          <span class="title-square"><%= article.title %></span><p class="read-more"></p>
+          <div class="summary-square"><%= raw(article.summary) %></div>
+        </div>
+      <% when 3,6 %>
+        <div id="<%= article.id %>" class="article-tile square" style="clear:left;">
+          <div class="fade-out-bottom"></div>
+          <span class="title-square"><%= article.title %></span><p class="read-more"></p>
+          <div class="summary-square"><%= raw(article.summary) %></div>
+        </div>
+      <% when 5 %>
+        <div id="<%= article.id %>" class="article-tile vert-rectangle">
+          <div class="fade-out-bottom"></div>
+        <% if article.image %>
+            <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+        <% end %>
+          <span class="title-vert-rectangle"><%= article.title %></span><p class="read-more"></p>
+          <div class="summary-vert-rectangle"><%= raw(article.summary) %></div>
+        </div>
+      <% when 4,7 %>
+        <div id="<%= article.id %>" class="article-tile horiz-rectangle">
+          <div class="fade-out-bottom"></div>
+          <% if article.image %>
+            <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+          <% end %>
+          <span class="title-horiz-rectangle"><%= article.title %></span><p class="read-more"></p>
+          <div class="summary-horiz-rectangle"><%= raw(article.summary) %></div>
+        </div>
     <% end %>
   <% end %>
 </div>
