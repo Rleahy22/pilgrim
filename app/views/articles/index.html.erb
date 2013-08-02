@@ -8,39 +8,39 @@
     <% when 0 %>
 
       <div id="<%= article.id %>" class="article-tile poster">
-        <%= image_tag article.image, :width => "100px" %>
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+        <span class="title-poster"><%= article.title %></span><br>
+        <div class="summary-poster"><%= raw(article.summary) %></div>
       </div>
 
     <% when 1,2 %>
 
       <div id="<%= article.id %>" class="article-tile square">
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+        <span class="title-square"><%= article.title %></span><br>
+        <div class="summary-square"><%= raw(article.summary) %></div>
       </div>
 
     <% when 3,6 %>
 
       <div id="<%= article.id %>" class="article-tile square" style="clear:left;">
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+        <span class="title-poster"><%= article.title %></span><br>
+        <div class="summary-poster"><%= raw(article.summary) %></div>
       </div>
 
     <% when 5 %>
 
       <div id="<%= article.id %>" class="article-tile vert-rectangle">
-        <%= image_tag article.image, :width => "100px" %>
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+        <span class="title-vert-rectangle"><%= article.title %></span><br>
+        <div class="summary-vert-rectangle"><%= raw(article.summary) %></div>
       </div>
 
     <% when 4,7 %>
 
       <div id="<%= article.id %>" class="article-tile horiz-rectangle">
-        <%= image_tag article.image, :width => "100px" %>
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+        <span class="title-horiz-rectangle"><%= article.title %></span><br>
+        <div class="summary-horiz-rectangle"><%= raw(article.summary) %></div>
       </div>
 
     <% end %>

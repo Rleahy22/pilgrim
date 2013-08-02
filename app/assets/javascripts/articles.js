@@ -77,7 +77,7 @@ $(document).ready( function() {
   $('.show-all-articles').on('click', function() {
     var $viewedArticle = $('.active-article');
     slideInTiles()
-    $viewedArticle.hide();
+    $viewedArticle.remove();
     $(this).fadeOut();
   });
 
