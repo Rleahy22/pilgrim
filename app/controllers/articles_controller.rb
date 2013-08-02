@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
       end
       @articles.flatten!
     end
+    @articles = @articles[0..10]
   end
 
   def show

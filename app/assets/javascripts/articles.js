@@ -3,7 +3,8 @@ var articleClasses = "";
 var changeArticleSize = function(article) {
   articlePosition = article.position();
   article.after(article.clone())
-
+  article.attr('class', 'active-article')
+  $('#' + article.attr('id') + '.article-tile').hide();
   article.css({
     'position': 'absolute',
     'top': articlePosition.top,
@@ -16,7 +17,6 @@ var changeArticleSize = function(article) {
     width: '60%',
     height: 'auto',
   }, function() {
-    article.attr('class', 'active-article')
     $('.show-all-articles').fadeIn();
     $(".article-tile").slideUp();
   });
