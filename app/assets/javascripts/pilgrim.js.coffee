@@ -12,12 +12,11 @@ $ ->
 
 
   $('body').on 'change', '#slider', ->
-    console.log("Meow.")
     window.currentArticle.updateTranslation $('#slider').val()
 
   $('#language').val($('#slider').data('source'))
 
-  $('#article').on 'mouseenter', '.foreign', ->
+  $('#article').on 'click', '.foreign', ->
     current = $(this)
     word = current.html()
     source = $('#article').data('source')

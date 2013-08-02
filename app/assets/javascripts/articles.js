@@ -58,7 +58,6 @@ $(document).ready( function() {
     articleClasses = $this.attr('class');
     fadeObjects(clickedId);
 
-
     $.ajax({
       url: '/articles/grab',
       type: 'POST',
@@ -74,6 +73,23 @@ $(document).ready( function() {
     });
 
   });
+
+  $('#landing').on('mouseenter', '.foreign', function() {
+    current = $(this);
+    word = current.html();
+    source = $('#article').data('source');
+    target = $('#slider').data('source');
+    $.getJSON('https://www.googleapis.com/language/translate/v2?key=AIzaSyALN7om8pcP6n5BhSB0v9K23KQB4B1mefo&q=' + word + '&source=' + target + '&target=' + source, function(data) {
+      replacement = data.data["translations"][0]["translatedText"];
+      current.html(replacement);
+      current.css("background-color", "#B8B8B8");
+    });
+    $('#article').on('mouseleave', '.foreign', function() {
+      current.css("background-color", "transparent");
+      current.html(word);
+    });
+  });
+
   $('.show-all-articles').on('click', function() {
     var $viewedArticle = $('.active-article');
     slideInTiles()
