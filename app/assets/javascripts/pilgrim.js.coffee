@@ -1,17 +1,19 @@
+Handlebars.registerHelper "showSourceLanguage", (level, options) ->
+  if level >= window.currentArticle.proficiency
+    return options.fn(this)
+  return options.inverse(this)
+
 $ ->
   template = Handlebars.compile($('#text-template').html())
   articleJson = $('[data-parsed-article]').text()
   translation = {words: JSON.parse(articleJson)}
 
-  window.article = new Article($("#article"), template, translation)
+  window.currentArticle = new Article($("#article"), template, translation)
 
-  Handlebars.registerHelper "showSourceLanguage", (level, options) ->
-    if level >= window.article.proficiency
-      return options.fn(this)
-    return options.inverse(this)
 
-  $('#slider').on 'change', ->
-    window.article.updateTranslation $('#slider').val()
+  $('body').on 'change', '#slider', ->
+    console.log("Meow.")
+    window.currentArticle.updateTranslation $('#slider').val()
 
   $('#language').val($('#slider').data('source'))
 
@@ -28,7 +30,7 @@ $ ->
       current.css "background-color", "transparent"
       current.html word
 
-  window.article.render()
+  window.currentArticle.render()
 
   $('#question').on 'mouseenter', ->
     $('#how_to').css "visibility", "visible"

@@ -2,99 +2,52 @@
   <%= Time.now.strftime("%B %d, %Y") %>
   <div class="show-all-articles"> Back to Articles</div>
 </div>
-<div class="articles">
+<div class="articles-wrapper">
   <% @articles.each_with_index do |article, index| %>
     <% case index%8 %>
     <% when 0 %>
-      <div id="<%= article.id %>" class="article poster" data-language="<%= article.source_language %>">
-        <%= image_tag article.image, :width => "100px" %>
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+
+      <div id="<%= article.id %>" class="article-tile poster">
+        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+        <span class="title-poster"><%= article.title %></span><br>
+        <div class="summary-poster"><%= raw(article.summary) %></div>
       </div>
+
     <% when 1,2 %>
-      <div id="<%= article.id %>" class="article square" data-language="<%= article.source_language %>">
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+
+      <div id="<%= article.id %>" class="article-tile square">
+        <span class="title-square"><%= article.title %></span><br>
+        <div class="summary-square"><%= raw(article.summary) %></div>
       </div>
+
     <% when 3,6 %>
-      <div id="<%= article.id %>" class="article square" style="clear:left;" data-language="<%= article.source_language %>">
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+
+      <div id="<%= article.id %>" class="article-tile square" style="clear:left;">
+        <span class="title-poster"><%= article.title %></span><br>
+        <div class="summary-poster"><%= raw(article.summary) %></div>
       </div>
-    <% when 5 %> 
-      <div id="<%= article.id %>" class="article vert-rectangle" data-language="<%= article.source_language %>">
-        <%= image_tag article.image, :width => "100px" %>
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+
+    <% when 5 %>
+
+      <div id="<%= article.id %>" class="article-tile vert-rectangle">
+        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+        <span class="title-vert-rectangle"><%= article.title %></span><br>
+        <div class="summary-vert-rectangle"><%= raw(article.summary) %></div>
       </div>
+
     <% when 4,7 %>
-      <div id="<%= article.id %>" class="article horiz-rectangle" data-language="<%= article.source_language %>">
-        <%= image_tag article.image, :width => "100px" %>
-        <%= article.title %><br>
-        <%= link_to article.url, article.url %>
+
+      <div id="<%= article.id %>" class="article-tile horiz-rectangle">
+        <%= image_tag article.image, :width => "100px", :class => "display-image" %>
+        <span class="title-horiz-rectangle"><%= article.title %></span><br>
+        <div class="summary-horiz-rectangle"><%= raw(article.summary) %></div>
       </div>
+
     <% end %>
   <% end %>
 </div>
 
 
 <script>
-    var articleClasses = ""
 
-    var showArticle = function(article) {
-      articlePosition = article.position()
-      article.after('<div class="' + articleClasses + ' token" style="opacity: 0"></div>')
-      article.css({
-        'position': 'absolute',
-        'top': articlePosition.top,
-        'left': articlePosition.left
-      });
-      article.animate({
-        top: 0,
-        left: 0,
-        width: '99%',
-        height: 'auto'
-      }, function() {
-        article.removeClass("poster square vert-rectangle horiz-rectangle")
-        $(".poster, .square, .vert-rectangle, .horiz-rectangle").slideUp();
-        $('.show-all-articles').fadeIn();
-      });
-    };
-
-    $('.article').on('click', function() {
-      var $this = $(this);
-      var clickedId = $this.attr('id');
-      var totalTime = ( $('.article').length * 10 )
-      articleClasses = $this.attr('class')
-      $this.addClass('active-article');
-      $('.article').each(function(i,obj) {
-         if ( $(obj).attr('id') != clickedId ) {
-           $(obj).fadeTo(i*10, 0.0);
-         }
-      });
-      $.ajax({
-        url: '/articles/grab',
-        type: 'POST',
-        data: {id: clickedId, language: $this.data('language')},
-        beforeSend: function() {
-          //$this.delay(totalTime).queue( showArticle($this) )
-          showArticle($this)
-        },
-        success: function(data) {
-          $this.html(data);
-        }
-      });
-    });
-      $('.show-all-articles').on('click', function() {
-        var $this = $('.active-article')
-        $('.article').each(function(i,obj) {
-          $(obj).slideDown();
-          $(obj).fadeTo(i * 50, 1.0)
-        });
-        $this.removeClass('active-article')
-        $this.addClass(articleClasses)
-
-        $this.attr('style','');
-        $('.token').replaceWith($this)
-    });
 </script>

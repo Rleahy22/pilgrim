@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     if session[:id]
       @user = User.find(session[:id])
-      @language = @user.languages.sample
+      @language = @user.languages.split(',').sample
     else
       @language = ['en', 'fr', 'it', 'de', 'es'].sample
       until @language != @article.source_language
@@ -29,9 +29,20 @@ class ArticlesController < ApplicationController
 
   def grab
     if request.xhr?
-      p params.inspect
       @article = Article.find(params[:id])
-      render :partial => 'articles/grab', :article => @article.load_translation(@article.source_language, params[:language])
+      unless params[:language]
+        if current_user
+          @language = (current_user.languages.split(',') - [@article.source_language]).sample
+        else
+          @language = (['en', 'fr', 'it', 'de', 'es'] - [@article.source_language]).sample
+        end
+        @language = "en" if @article.source_language != "en"
+      else
+        @language = params[:language]
+      end
+
+      @json = @article.load_translation(@article.source_language, @language)
+      render :partial => 'articles/grab'
     end
   end
 
