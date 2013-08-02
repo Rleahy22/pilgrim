@@ -36,11 +36,11 @@ $brown: #3f1a05;
       cursor: pointer;
     }
   }
-  .articles {
+  .articles-wrapper {
     width: 99%;
     position: relative;
   }
-  .article {
+  .article-tile {
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
     box-shadow: -5px 5px $darkBeige, inset -2px 2px $darkBeige, inset 2px -2px $darkBeige;
     float: left;

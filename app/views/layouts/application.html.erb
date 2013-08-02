@@ -7,26 +7,30 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<nav>
-	<body id="landing">
-		<%= link_to "Pilgrim", root_path, :class => "nav-logo" %>
-	<div class="nav-links">
-    <% unless session[:user_id] %>
-      <%= link_to "About Pilgrim", articles_path %>
-  	  <%= link_to "Sign Up", "/auth/google_oauth2", :class => "nudge" %>
-  	  <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
-    <% else %>
-      <%= link_to "My Feed", user_articles_path(current_user) %>
-      <%= link_to "Preferences", user_path(current_user), :class => "nudge" %>
-      <%= link_to "Logout", user_logout_path(current_user), :class => "nudge" %>
+<body id="landing">
+  <div>
 
-    <% end %>
-	</div>
-</nav>
-<%= yield %>
+    <nav>
+		  <%= link_to "Pilgrim", root_path, :class => "nav-logo" %>
+	      <div class="nav-links">
+          <% unless session[:user_id] %>
+            <%= link_to "About Pilgrim", articles_path %>
+      	    <%= link_to "Sign Up", "/auth/google_oauth2", :class => "nudge" %>
+      	    <%= link_to "Sign In", "/auth/google_oauth2", :class => "nudge" %>
+          <% else %>
+            <%= link_to "My Feed", user_articles_path(current_user) %>
+            <%= link_to "Preferences", user_path(current_user), :class => "nudge" %>
+            <%= link_to "Logout", user_logout_path(current_user), :class => "nudge" %>
+          <% end %>
+	      </div>
+    </nav>
 
-<footer>
-	Pilgrim © was created by Tyler Shipe, Ryan Leahy, and Ben Yorke
-</footer>
+    <%= yield %>
+
+  </div>
+
+  <footer>
+  	Pilgrim © was created by Tyler Shipe, Ryan Leahy, and Ben Yorke
+  </footer>
 </body>
 </html>

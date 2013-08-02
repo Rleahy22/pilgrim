@@ -1,19 +1,21 @@
 #article_title {
   padding: 5% 5% 0 5%;
-  background-color: white;
   margin: 6% auto 0 auto;
-  width: 50%;
+  width: 89%;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 36pt;
 }
 
 #article {
   padding: 3% 5% 5% 5%;
-  background-color: white;
   margin: auto;
-  width: 50%;
+  width: 89%;
   font-family: Times;
-  font-size: 14pt;
+  font-size: 16pt;
+  line-height: 150%;
+  img {
+    width: 89%;
+  }
 }
 
 #preferences {
@@ -36,7 +38,6 @@
       width: 100%;
       padding: 3%;
       -webkit-appearance: none;
-      // overflow: hidden;
       background: url(Dropdown_Arrow.png) no-repeat right white;
       background-size: 30px 30px;
     }
