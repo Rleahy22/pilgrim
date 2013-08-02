@@ -67,44 +67,46 @@
 .display-image {
   float: left;
   margin: 10px 10px 0 0 ;
+  width: 35%;
 }
 
 .title-poster {
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: bold;
 }
 
 .summary-poster {
   font-size: 1.5em;
-  line-height: 1.3em;
-  // max-height: 353px;
-  // overflow:hidden;
+  line-height: 1.5em;
 }
 
 .title-square {
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .summary-square {
-
+  font-size: 1.5em;
+  line-height: 1.1em;
 }
 
 .title-horiz-rectangle {
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: bold;
 }
 
 .summary-horiz-rectangle {
-
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 
 .title-vert-rectangle {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
 }
 
 .summary-vert-rectangle {
-
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 
