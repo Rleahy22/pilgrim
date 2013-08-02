@@ -19,32 +19,53 @@
 }
 
 #preferences {
-  width: 25%;
-  position: fixed;
-  top: 14%;
-  right: 0%;
-  display: inline-block;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  width: 99%;
+  margin-top: 2px;
+  margin-left: 5px;
+  z-index: 100;
+  box-shadow: inset 0 100px 20px -40px  white;
   #options {
-    width: 35%;
-    margin: 0;
+    display: inline-block;
+    float: left;
+    width: 25%;
+    margin-left: 5%;
     #language {
+      padding: 10px 30px;
       background: transparent;
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 18pt;
       font-weight: 300;
       border: 0;
-      box-shadow: -3px 3px 0 #e2dfd7;
+      #box-shadow: -3px 3px 0 #e2dfd7, inset -1px -1px #e2dfd7, inset 1px 1px #e2dfd7;
       border-radius: 0;
-      width: 100%;
-      padding: 3%;
       -webkit-appearance: none;
       background: url(Dropdown_Arrow.png) no-repeat right white;
       background-size: 30px 30px;
+      cursor: pointer;
+    }
+  }
+  .help {
+    height: 50px;
+    line-height: 60px;
+    font-size: 20pt;
+    margin: 0 6%;
+    float: left;
+    opacity: 0.5;
+    cursor: pointer;
+    outline: none;
+    &:active {
+      outline: none;
     }
   }
   #slider {
-    margin-top: 4%;
-    width: 35%;
+    float: right;
+    width: 40%;
+    display: inline-block;
+    margin-right: 10%;
+    margin-top: 3%;
   }
   #question {
     width: 30px;
@@ -54,13 +75,12 @@
     cursor: pointer;
   }
   #how_to {
-    visibility: hidden;
-    padding: 1%;
-    position: relative;
-    left: 38%;
-    width: 50%;
-    background-color: white;
-    box-shadow: -3px 3px 0 #e2dfd7;
+    display: none;
+    text-align: center;
+    height: 50px;
+    line-height: 20px;
+    clear: both;
+    width: 100%;
   }
 }
 

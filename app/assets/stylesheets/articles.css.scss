@@ -19,6 +19,17 @@ $beige:#D4CDB8;
   background: -webkit-linear-gradient(rgba(248,245,237,0) 0%, rgba(248,245,237,1) 100%);
 }
 
+.fade-out-bottom {
+  position: absolute;
+  top: 0;
+  top: 89.5%;
+  height: 20%;
+  width: 76%;
+  padding-left: 3px;
+  //background:
+  background: -webkit-linear-gradient(rgba(248, 245, 237,0) 0%, rgba(248, 245, 237,1) 100%);
+}
+
 .sharp-shadow {
     background: white;
     border: 1px solid rgba(249, 248, 244, 1);
@@ -61,6 +72,7 @@ $beige:#D4CDB8;
     padding: 20px 25px;
     overflow: hidden;
     background: $lightBeige;
+    position: relative;
     &:hover {
       overflow: hidden;
       background: $lightBeige;
