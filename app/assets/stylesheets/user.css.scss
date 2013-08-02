@@ -122,6 +122,14 @@ $brown: #3f1a05;
     height: 300px;
     font-size: 14pt;
     font-weight: 100;
+    .words {
+      float: left;
+      margin-right: 2%;
+    }
+    .slider {
+      margin: 15%;
+      width: 65%;
+    }
   }
   .what {
     h1 {

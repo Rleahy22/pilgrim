@@ -5,7 +5,8 @@
       <%= link_to "Sign Up", '/auth/google_oauth2' %>
     </div>
     <div class="cta-demo sharp-shadow">
-      Pilgrim is the first global news aggrigator.  Pilgrim helps break down barriers between foreign countries, providing you with news articles in a variety of languages, originating from every corner of the globe.  With articles taylored to your interests.
+      <div class="words">Pilgrim</div> <div class="words">is</div> <div class="words">the</div> <div class="words one back">first</div> <div class="words">global</div> <div class="words">news</div> <div class="words three back">aggregator.</div>  <div class="words">Pilgrim</div> <div class="words">helps</div> <div class="words">break</div> <div class="words">down</div> <div class="words">barriers</div> <div class="words">between</div> <div class="words two back">foreign</div> <div class="words">countries,</div> <div class="words">providing</div> <div class="words four back">you</div> <div class="words">with</div> <div class="words">news</div> <div class="words">articles</div> <div class="words">in</div> <div class="words">a</div> <div class="words">variety</div> <div class="words">of</div> <div class="words">languages,</div> <div class="words">originating</div> <div class="words tres back">from</div> <div class="words">every</div> <div class="words uno back">corner</div> <div class="words">of</div> <div class="words">the</div> <div class="words">globe.</div>  <div class="words">With</div> <div class="words cuatro back">articles</div> <div class="words">tailored</div> <div class="words">to</div> <div class="words">your</div> <div class="words dos back">interests.</div>
+      <input class="slider" data-source="<%= @language %>" type="range" name="points" min="1" max="30" step="1" value="1">
     </div>
 </div>
 
@@ -36,7 +37,64 @@
   var $border = $('.icon-description');
   var $carrot = $('.carrot');
   var $text = $('.icon-description span');
-  $('.globe').on('click', function() { 
+  var level = 1
+  var round = 1
+  setInterval(moveSlider, 2000);
+  function moveSlider() {
+    if (level < 30) {
+    level = level + 8;
+    } else {
+      level = 1;
+    };
+    if (round === 1) {
+      original = 'en';
+      different = 'fr';
+    };
+    if (level === 9) {
+      change = true;
+      current = $('.one');
+      other = $('.uno');
+    } else if (level === 17) {
+      current = $('.two');
+      other = $('.dos');
+    } else if (level === 25) {
+      current = $('.three');
+      other = $('.tres');
+    } else if (level === 33) {
+      current = $('.four');
+      other = $('.cuatro');
+    } else {
+      change = false;
+      current = null;
+      other = null;
+      original = 'fr';
+      different = 'en';
+      $('.words').css("font-weight", 200);
+      changeWord($('.one'), original, different, change);
+      changeWord($('.uno'), original, different, change);
+      changeWord($('.two'), original, different, change);
+      changeWord($('.dos'), original, different, change);
+      changeWord($('.three'), original, different, change);
+      changeWord($('.tres'), original, different, change);
+      changeWord($('.four'), original, different, change);
+      changeWord($('.cuatro'), original, different, change);
+    };
+    $('.slider').val(level);
+    changeWord(current, original, different, change);
+    changeWord(other, original, different, change);
+    function changeWord(translated, source, target, shouldChange) {
+      console.log(translated);
+      word = translated.html();
+      $.getJSON('https://www.googleapis.com/language/translate/v2?key=AIzaSyALN7om8pcP6n5BhSB0v9K23KQB4B1mefo&q=' + word + '&source=' + source + '&target=' + target, function(data) {
+        replacement = data.data["translations"][0]["translatedText"];
+        translated.html(replacement);
+        if (change === true) {
+          translated.css("font-weight", "bold");
+        };
+      });
+    };
+  };
+  $('.globe').on('click', function() {
     $background.animate({backgroundColor: '#96a240'});
     $border.animate({borderColor: '#96a240'})
     $carrot.animate({left: '14%'});
