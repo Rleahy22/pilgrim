@@ -117,4 +117,92 @@ $(document).ready( function() {
     });
   });
 
+  var $background = $('.pseudo-box-shadow, .carrot');
+  var $border = $('.icon-description');
+  var $carrot = $('.carrot');
+  var $text = $('.icon-description span');
+
+  $('.globe').on('click', function() {
+    $background.animate({backgroundColor: '#96a240'});
+    $border.animate({borderColor: '#96a240'})
+    $carrot.animate({left: '14%'});
+    $text.hide();
+    $('#globe').fadeIn();
+  });
+
+  $('.translate').on('click', function() {
+    $background.animate({backgroundColor: '#5b0000'});
+    $border.animate({borderColor: '#5b0000'})
+    $carrot.animate({left: '48%'});
+    $text.hide();
+    $('#translate').fadeIn();
+  });
+
+  $('.dbc').on('click', function() {
+    $background.animate({backgroundColor: '#b87c47'});
+    $border.animate({borderColor: '#b87c47'})
+    $carrot.animate({left: '82%'});
+    $text.hide();
+    $('#dbc').fadeIn();
+  });
+
+  var level = 1
+  var round = 1
+
+  setInterval(moveSlider, 2000);
+
+  function moveSlider() {
+    if (level < 30) {
+    level = level + 8;
+    } else {
+      level = 1;
+    };
+    if (round === 1) {
+      original = 'en';
+      different = 'fr';
+    };
+    if (level === 9) {
+      change = true;
+      current = $('.one');
+      other = $('.uno');
+    } else if (level === 17) {
+      current = $('.two');
+      other = $('.dos');
+    } else if (level === 25) {
+      current = $('.three');
+      other = $('.tres');
+    } else if (level === 33) {
+      current = $('.four');
+      other = $('.cuatro');
+    } else {
+      change = false;
+      current = null;
+      other = null;
+      original = 'fr';
+      different = 'en';
+      $('.words').css("font-weight", 200);
+      changeWord($('.one'), original, different, change);
+      changeWord($('.uno'), original, different, change);
+      changeWord($('.two'), original, different, change);
+      changeWord($('.dos'), original, different, change);
+      changeWord($('.three'), original, different, change);
+      changeWord($('.tres'), original, different, change);
+      changeWord($('.four'), original, different, change);
+      changeWord($('.cuatro'), original, different, change);
+    };
+
+    $('.slider').val(level);
+    changeWord(current, original, different, change);
+    changeWord(other, original, different, change);
+    function changeWord(translated, source, target, shouldChange) {
+      word = translated.html();
+      $.getJSON('https://www.googleapis.com/language/translate/v2?key=AIzaSyALN7om8pcP6n5BhSB0v9K23KQB4B1mefo&q=' + word + '&source=' + source + '&target=' + target, function(data) {
+        replacement = data.data["translations"][0]["translatedText"];
+        translated.html(replacement);
+        if (change === true) {
+          translated.css("font-weight", "bold");
+        };
+      });
+    };
+  };
 });
